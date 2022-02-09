@@ -7,4 +7,16 @@ public abstract class CharacterClass {
     public CharacterClass(String name){
         this.NAME = name;
     }
+
+    public String getName(){
+        return this.NAME;
+    }
+
+    public void incrementLevel(){
+        this.level++;
+    }
+
+    public int getLevel(){
+        return this.level;
+    }
 }
