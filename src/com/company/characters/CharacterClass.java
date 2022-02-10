@@ -15,10 +15,16 @@ public abstract class CharacterClass {
     private Map<ArmorType, Boolean> allowedArmorType = new HashMap<>();
     private Map<EquipmentSlot, Item> equipment = new HashMap<>();
 
-    public CharacterClass(String name, int strength, int dexterity, int intelligence){
+    public CharacterClass(String name, int strength, int dexterity, int intelligence, WeaponType[] weaponTypes, ArmorType[] armorTypes){
         this.name = name;
         this.baseAttributes = new PrimaryAttribute(strength, dexterity, intelligence);
         this.totalAttributes = new PrimaryAttribute(strength, dexterity, intelligence);
+        for(int i = 0; i < weaponTypes.length; i++){
+            allowedWeaponType.put(weaponTypes[i], true);
+        }
+        for(int i = 0; i < armorTypes.length; i++){
+            allowedArmorType.put(armorTypes[i], true);
+        }
     }
 
     public String getName(){
