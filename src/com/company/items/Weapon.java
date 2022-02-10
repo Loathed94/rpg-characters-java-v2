@@ -2,10 +2,10 @@ package com.company.items;
 
 public class Weapon extends Item{
     private final WeaponType weaponType;
-    private final int damage;
-    private final int attackSpeed;
+    private final double damage;
+    private final double attackSpeed;
 
-    public Weapon(String name, int requiredLevel, WeaponType weaponType, int damage, int attackSpeed){
+    public Weapon(String name, int requiredLevel, WeaponType weaponType, double damage, double attackSpeed){
         super(name, requiredLevel, EquipmentSlot.WEAPON);
         this.weaponType = weaponType;
         this.damage = damage;
@@ -16,7 +16,7 @@ public class Weapon extends Item{
         return this.weaponType;
     }
 
-    public int getDPS(){
+    public double getDPS(){
         return this.damage * this.attackSpeed;
     }
 }
