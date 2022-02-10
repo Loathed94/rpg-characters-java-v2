@@ -9,9 +9,9 @@ class ItemTest {
 
     @Test
     void makeSureGettersWorkAsExpected(){
-        Item weapon1 = new Weapon("Destroyer of Worlds", 100, WeaponType.HAMMER);
-        Item weapon2 = new Weapon("Blunt Dagger of Uselessness", 0, WeaponType.DAGGER);
-        Item weapon3 = new Weapon("A decent wand", 30, WeaponType.WAND);
+        Item weapon1 = new Weapon("Destroyer of Worlds", 100, WeaponType.HAMMER, 600, 2);
+        Item weapon2 = new Weapon("Blunt Dagger of Uselessness", 0, WeaponType.DAGGER, 1, 2);
+        Item weapon3 = new Weapon("A decent wand", 30, WeaponType.WAND, 60, 3);
 
         Assertions.assertEquals(weapon1.getName(), "Destroyer of Worlds");
         Assertions.assertEquals(weapon2.getName(), "Blunt Dagger of Uselessness");
