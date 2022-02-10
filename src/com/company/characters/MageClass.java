@@ -1,8 +1,8 @@
-package com.company;
+package com.company.characters;
 
 public class MageClass extends CharacterClass{
 
     public MageClass(String name){
-        super(name);
+        super(name, 1, 1, 8);
     }
 }

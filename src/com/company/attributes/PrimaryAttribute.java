@@ -1,4 +1,4 @@
-package com.company;
+package com.company.attributes;
 
 public class PrimaryAttribute {
     private int strength;
