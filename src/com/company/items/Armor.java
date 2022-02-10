@@ -8,8 +8,15 @@ public class Armor extends Item{
 
     public Armor(String name, int requiredLevel, EquipmentSlot equipmentSlot, ArmorType armorType, int strength, int dexterity, int intelligence){
         super(name, requiredLevel, equipmentSlot);
+        checkSlotAcceptability(equipmentSlot);
         this.armorType = armorType;
         this.attributes = new PrimaryAttribute(strength, dexterity, intelligence);
+    }
+
+    private void checkSlotAcceptability(EquipmentSlot equipmentSlot){
+        if (equipmentSlot == EquipmentSlot.WEAPON){
+            throw new IllegalArgumentException("Armor cannot be assigned to weapon slot!");
+        }
     }
 
     public ArmorType getArmorType() {
