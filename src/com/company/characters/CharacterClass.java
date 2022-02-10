@@ -28,4 +28,12 @@ public abstract class CharacterClass {
     }
 
     protected abstract void increaseAttributesFromLevel();
+
+    protected PrimaryAttribute getBaseAttributes(){
+        return this.baseAttributes;
+    }
+
+    protected PrimaryAttribute getTotalAttributes(){
+        return this.totalAttributes;
+    }
 }
