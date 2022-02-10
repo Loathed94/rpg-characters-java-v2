@@ -29,11 +29,11 @@ class WeaponTest {
     @Test
     void makeSureDPSIsCorrect(){
         Weapon hammer = new Weapon("Destroyer of Worlds", 100, WeaponType.HAMMER, 600, 2);
-        Weapon dagger = new Weapon("Blunt Dagger of Uselessness", 0, WeaponType.DAGGER, 1, 2);
-        Weapon wand = new Weapon("A decent wand", 30, WeaponType.WAND, 60, 3);
+        Weapon dagger = new Weapon("Blunt Dagger of Uselessness", 0, WeaponType.DAGGER, 1.5, 2);
+        Weapon wand = new Weapon("A decent wand", 30, WeaponType.WAND, 60.5, 3.75);
 
         assertEquals(hammer.getDPS(), 1200);
-        assertEquals(dagger.getDPS(), 2);
-        assertEquals(wand.getDPS(), 180);
+        assertEquals(dagger.getDPS(), 3.0);
+        assertEquals(wand.getDPS(), 226.875);
     }
 }
