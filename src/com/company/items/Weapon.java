@@ -15,4 +15,8 @@ public class Weapon extends Item{
     public WeaponType getWeaponType() {
         return this.weaponType;
     }
+
+    public int getDPS(){
+        return this.damage * this.attackSpeed;
+    }
 }
