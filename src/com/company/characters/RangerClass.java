@@ -1,11 +1,13 @@
 package com.company.characters;
 
 import com.company.attributes.PrimaryAttribute;
+import com.company.items.ArmorType;
+import com.company.items.WeaponType;
 
 public class RangerClass extends CharacterClass{
 
     public RangerClass(String name){
-        super(name, 1, 7, 1);
+        super(name, 1, 7, 1, new WeaponType[]{WeaponType.BOW}, new ArmorType[]{ArmorType.LEATHER, ArmorType.MAIL});
     }
 
     @Override

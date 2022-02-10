@@ -1,11 +1,13 @@
 package com.company.characters;
 
 import com.company.attributes.PrimaryAttribute;
+import com.company.items.ArmorType;
+import com.company.items.WeaponType;
 
 public class RogueClass extends CharacterClass{
 
     public RogueClass(String name){
-        super(name, 2, 6, 1);
+        super(name, 2, 6, 1, new WeaponType[]{WeaponType.DAGGER, WeaponType.SWORD}, new ArmorType[]{ArmorType.LEATHER, ArmorType.MAIL});
     }
 
     @Override

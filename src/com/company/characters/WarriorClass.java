@@ -1,11 +1,13 @@
 package com.company.characters;
 
 import com.company.attributes.PrimaryAttribute;
+import com.company.items.ArmorType;
+import com.company.items.WeaponType;
 
 public class WarriorClass extends CharacterClass{
 
     public WarriorClass(String name){
-        super(name, 5, 2, 1);
+        super(name, 5, 2, 1, new WeaponType[]{WeaponType.AXE, WeaponType.HAMMER, WeaponType.SWORD}, new ArmorType[]{ArmorType.MAIL, ArmorType.PLATE});
     }
 
     @Override
