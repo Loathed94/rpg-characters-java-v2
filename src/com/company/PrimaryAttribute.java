@@ -22,4 +22,16 @@ public class PrimaryAttribute {
     public int getIntelligence(){
         return this.intelligence;
     }
+
+    public void increaseStrength(int increaseBy){
+        this.strength += increaseBy;
+    }
+
+    public void increaseDexterity(int increaseBy){
+        this.dexterity += increaseBy;
+    }
+
+    public void increaseIntelligence(int increaseBy){
+        this.intelligence += increaseBy;
+    }
 }
