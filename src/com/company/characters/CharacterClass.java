@@ -20,9 +20,12 @@ public abstract class CharacterClass {
 
     public void incrementLevel(){
         this.level++;
+        increaseAttributesFromLevel();
     }
 
     public int getLevel(){
         return this.level;
     }
+
+    protected abstract void increaseAttributesFromLevel();
 }
