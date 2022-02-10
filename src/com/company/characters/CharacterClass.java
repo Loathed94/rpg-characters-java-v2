@@ -50,6 +50,29 @@ public abstract class CharacterClass {
         return (allowedArmorType.get(armor.getArmorType()) == true) ? true : false;
     }
 
+    public void equipItem(Item item){
+        if(item instanceof Armor){
+            if(isArmorAcceptable((Armor) item)){
+                equipment.put(item.getEquipmentSlot(), item);
+            }
+            else{
+                //throw error
+            }
+        }
+        else if(item instanceof Weapon){
+            if(isWeaponAcceptable((Weapon) item)){
+                equipment.put(item.getEquipmentSlot(), item);
+            }
+            else{
+                //throw error
+            }
+        }
+    }
+
+    private void updateAttributes(){
+
+    }
+
     protected PrimaryAttribute getBaseAttributes(){
         return this.baseAttributes;
     }
