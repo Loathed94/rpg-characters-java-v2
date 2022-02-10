@@ -19,9 +19,7 @@ public class PrimaryAttribute {
         return this.dexterity;
     }
 
-    public int getIntelligence(){
-        return this.intelligence;
-    }
+    public int getIntelligence(){return this.intelligence; }
 
     public void increaseStrength(int increaseBy){
         this.strength += increaseBy;
