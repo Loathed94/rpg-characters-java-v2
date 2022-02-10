@@ -26,4 +26,16 @@ class ArmorTest {
         Assertions.assertEquals(armor3.getAttributes()[2], 88);
     }
 
+    @Test
+    void makeSureArmorTypesAreCorrect(){
+        Armor leather = new Armor("BlaBla", 4, EquipmentSlot.HEAD, ArmorType.LEATHER, 6, 9, 3);
+        Armor mail = new Armor("Decent item", 50, EquipmentSlot.BODY, ArmorType.MAIL, 30, 50, 18);
+        Armor cloth = new Armor("Bretty good leggins", 70, EquipmentSlot.LEGS, ArmorType.CLOTH, 58, 49, 88);
+        Armor plate = new Armor("Breastplate of Awesomeness", 666, EquipmentSlot.BODY, ArmorType.PLATE, 321, 275, 100);
+
+        Assertions.assertEquals(leather.getArmorType(), ArmorType.LEATHER);
+        Assertions.assertEquals(mail.getArmorType(), ArmorType.MAIL);
+        Assertions.assertEquals(cloth.getArmorType(), ArmorType.CLOTH);
+        Assertions.assertEquals(plate.getArmorType(), ArmorType.PLATE);
+    }
 }
