@@ -3,9 +3,9 @@ package com.company.items;
 public abstract class Item {
     private final String name;
     private final int requiredLevel;
-    private final String equipmentSlot;
+    private final EquipmentSlot equipmentSlot;
 
-    public Item(String name, int requiredLevel, String equipmentSlot){
+    public Item(String name, int requiredLevel, EquipmentSlot equipmentSlot){
         this.name = name;
         this.requiredLevel = requiredLevel;
         this.equipmentSlot = equipmentSlot;
@@ -19,7 +19,7 @@ public abstract class Item {
         return requiredLevel;
     }
 
-    public String getEquipmentSlot() {
+    public EquipmentSlot getEquipmentSlot() {
         return equipmentSlot;
     }
 }
