@@ -1,10 +1,7 @@
 package com.company.characters;
 
 import com.company.attributes.PrimaryAttribute;
-import com.company.items.ArmorType;
-import com.company.items.EquipmentSlot;
-import com.company.items.Item;
-import com.company.items.WeaponType;
+import com.company.items.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,6 +35,14 @@ public abstract class CharacterClass {
     }
 
     protected abstract void increaseAttributesFromLevel();
+
+    private boolean isWeaponAcceptable(Weapon weapon){
+        return (allowedWeaponType.get(weapon.getWeaponType()) == true) ? true : false;
+    }
+
+    private boolean isArmorAcceptable(Armor armor){
+        return (allowedArmorType.get(armor.getArmorType()) == true) ? true : false;
+    }
 
     protected PrimaryAttribute getBaseAttributes(){
         return this.baseAttributes;
