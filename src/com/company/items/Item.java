@@ -12,14 +12,14 @@ public abstract class Item {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public int getRequiredLevel() {
-        return requiredLevel;
+        return this.requiredLevel;
     }
 
     public EquipmentSlot getEquipmentSlot() {
-        return equipmentSlot;
+        return this.equipmentSlot;
     }
 }
