@@ -28,4 +28,16 @@ class CharacterClassTest {
         Assertions.assertEquals(rogue.getName(), rogueName);
         Assertions.assertEquals(ranger.getName(), rangerName);
     }
+
+    @Test
+    void incrementLevelShouldIncreaseLevelByOneAtATime(){
+        CharacterClass warrior = new WarriorClass("Grom Hellscream");
+
+        Assertions.assertEquals(warrior.getLevel(), 1);
+
+        warrior.incrementLevel();
+        warrior.incrementLevel();
+
+        Assertions.assertEquals(warrior.getLevel(), 3);
+    }
 }
