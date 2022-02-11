@@ -45,11 +45,11 @@ public abstract class CharacterClass {
     protected abstract void increaseAttributesFromLevel();
 
     private boolean isWeaponAcceptable(Weapon weapon){
-        return (allowedWeaponType.get(weapon.getWeaponType()) == true) ? true : false;
+        return allowedWeaponType.get(weapon.getWeaponType()) == true;
     }
 
     private boolean isArmorAcceptable(Armor armor){
-        return (allowedArmorType.get(armor.getArmorType()) == true) ? true : false;
+        return allowedArmorType.get(armor.getArmorType()) == true;
     }
 
     public void equipItem(Item item){
