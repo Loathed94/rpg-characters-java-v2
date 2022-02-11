@@ -2,6 +2,8 @@ package com.company.characters;
 
 import com.company.attributes.PrimaryAttribute;
 import com.company.items.ArmorType;
+import com.company.items.EquipmentSlot;
+import com.company.items.Weapon;
 import com.company.items.WeaponType;
 
 public class WarriorClass extends CharacterClass{
@@ -20,5 +22,18 @@ public class WarriorClass extends CharacterClass{
         total.increaseStrength(3);
         total.increaseDexterity(2);
         total.increaseIntelligence(1);
+    }
+
+    @Override
+    public double getDPS() {
+        double weaponDPS;
+        if(getEquipment(EquipmentSlot.WEAPON) != null) {
+            weaponDPS = ((Weapon) getEquipment(EquipmentSlot.WEAPON)).getDPS();
+        }else{
+            weaponDPS = 1;
+        }
+        double dpsFromAttribute = 1.0 + ((double) getTotalAttributes().getStrength())/100.0;
+
+        return weaponDPS*dpsFromAttribute;
     }
 }

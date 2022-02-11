@@ -2,6 +2,8 @@ package com.company.characters;
 
 import com.company.attributes.PrimaryAttribute;
 import com.company.items.ArmorType;
+import com.company.items.EquipmentSlot;
+import com.company.items.Weapon;
 import com.company.items.WeaponType;
 
 public class MageClass extends CharacterClass{
@@ -20,5 +22,18 @@ public class MageClass extends CharacterClass{
         total.increaseStrength(1);
         total.increaseDexterity(1);
         total.increaseIntelligence(5);
+    }
+
+    @Override
+    public double getDPS() {
+        double weaponDPS;
+        if(getEquipment(EquipmentSlot.WEAPON) != null) {
+            weaponDPS = ((Weapon) getEquipment(EquipmentSlot.WEAPON)).getDPS();
+        }else{
+            weaponDPS = 1;
+        }
+        double dpsFromAttribute = 1.0 + ((double) getTotalAttributes().getIntelligence())/100.0;
+
+        return weaponDPS*dpsFromAttribute;
     }
 }
