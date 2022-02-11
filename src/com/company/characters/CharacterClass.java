@@ -1,6 +1,8 @@
 package com.company.characters;
 
 import com.company.attributes.PrimaryAttribute;
+import com.company.exceptions.InvalidArmorException;
+import com.company.exceptions.InvalidWeaponException;
 import com.company.items.*;
 
 import java.util.HashMap;
@@ -51,21 +53,29 @@ public abstract class CharacterClass {
     }
 
     public void equipItem(Item item){
-        if(item instanceof Armor){
-            if(isArmorAcceptable((Armor) item)){
-                equipment.put(item.getEquipmentSlot(), item);
+        try{
+            if(item instanceof Armor){
+                if(isArmorAcceptable((Armor) item)){
+                    equipment.put(item.getEquipmentSlot(), item);
+                }
+                else{
+                    throw new InvalidArmorException("Armor type not acceptable for your character class!");
+                }
             }
-            else{
-                //throw error
+            else if(item instanceof Weapon){
+                if(isWeaponAcceptable((Weapon) item)){
+                    equipment.put(item.getEquipmentSlot(), item);
+                }
+                else{
+                    throw new InvalidWeaponException("Weapon type not acceptable for your character class!");
+                }
             }
-        }
-        else if(item instanceof Weapon){
-            if(isWeaponAcceptable((Weapon) item)){
-                equipment.put(item.getEquipmentSlot(), item);
-            }
-            else{
-                //throw error
-            }
+        }catch(InvalidArmorException e){
+            System.out.println(e.toString());
+            return;
+        }catch (InvalidWeaponException e){
+            System.out.println(e.toString());
+            return;
         }
     }
 
