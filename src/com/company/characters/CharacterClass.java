@@ -13,8 +13,8 @@ public abstract class CharacterClass {
     private int level = 1;
     private PrimaryAttribute baseAttributes;
     private PrimaryAttribute totalAttributes;
-    private Map<WeaponType, Boolean> allowedWeaponType = new HashMap<>();
-    private Map<ArmorType, Boolean> allowedArmorType = new HashMap<>();
+    private final Map<WeaponType, Boolean> allowedWeaponType = new HashMap<>();
+    private final Map<ArmorType, Boolean> allowedArmorType = new HashMap<>();
     private Map<EquipmentSlot, Item> equipment = new HashMap<>();
 
     public CharacterClass(String name, int strength, int dexterity, int intelligence, WeaponType[] weaponTypes, ArmorType[] armorTypes){
