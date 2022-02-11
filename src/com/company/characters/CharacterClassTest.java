@@ -1,5 +1,6 @@
 package com.company.characters;
 
+import com.company.items.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -39,5 +40,21 @@ class CharacterClassTest {
         warrior.incrementLevel();
 
         Assertions.assertEquals(warrior.getLevel(), 3);
+    }
+
+    @Test
+    void makeSureEquippingItemWorks(){
+        CharacterClass warrior = new WarriorClass("Grom Hellscream");
+        Item plate = new Armor("Breastplate of utter Worthlessness", 0, EquipmentSlot.BODY, ArmorType.PLATE, 5, 2, 1);
+        Item sword = new Weapon("Blade of something", 0, WeaponType.SWORD, 50, 2);
+
+        Assertions.assertEquals(warrior.getEquipment(plate.getEquipmentSlot()), null);
+        Assertions.assertEquals(warrior.getEquipment(sword.getEquipmentSlot()), null);
+
+        warrior.equipItem(plate);
+        warrior.equipItem(sword);
+
+        Assertions.assertEquals(warrior.getEquipment(plate.getEquipmentSlot()), plate);
+        Assertions.assertEquals(warrior.getEquipment(sword.getEquipmentSlot()), sword);
     }
 }
