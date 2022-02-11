@@ -99,6 +99,8 @@ public abstract class CharacterClass {
         totalAttributes.setIntelligence(intelligence);
     }
 
+    public abstract double getDPS();
+
     protected PrimaryAttribute getBaseAttributes(){
         return this.baseAttributes;
     }
