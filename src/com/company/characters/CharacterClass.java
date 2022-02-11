@@ -52,8 +52,7 @@ public abstract class CharacterClass {
         return allowedArmorType.get(armor.getArmorType());
     }
 
-    public void equipItem(Item item){
-        try{
+    public void equipItem(Item item) throws InvalidArmorException, InvalidWeaponException {
             if(item instanceof Armor){
                 if(item.getRequiredLevel() > this.level){
                     throw new InvalidArmorException("Your level is too low for that item!");
@@ -78,11 +77,6 @@ public abstract class CharacterClass {
                     throw new InvalidWeaponException("Weapon type not acceptable for your character class!");
                 }
             }
-        }catch(InvalidArmorException e){
-            System.out.println(e);
-        }catch (InvalidWeaponException e){
-            System.out.println(e);
-        }
     }
 
     public Item getEquipment(EquipmentSlot slot){
