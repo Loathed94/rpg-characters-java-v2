@@ -58,4 +58,21 @@ class PrimaryAttributeTest {
         Assertions.assertEquals(lowAttributeValues.getDexterity(), 7+5+2);
         Assertions.assertEquals(lowAttributeValues.getIntelligence(), 2+8+3);
     }
+
+    @Test
+    void makeSureSettersInPrimaryAttributeWorkAsIntended(){
+        PrimaryAttribute attributes = new PrimaryAttribute(9, 7, 2);
+
+        Assertions.assertEquals(attributes.getStrength(), 9);
+        Assertions.assertEquals(attributes.getDexterity(), 7);
+        Assertions.assertEquals(attributes.getIntelligence(), 2);
+
+        attributes.setStrength(34);
+        attributes.setDexterity(87);
+        attributes.setIntelligence(16);
+
+        Assertions.assertEquals(attributes.getStrength(), 34);
+        Assertions.assertEquals(attributes.getDexterity(), 87);
+        Assertions.assertEquals(attributes.getIntelligence(), 16);
+    }
 }
