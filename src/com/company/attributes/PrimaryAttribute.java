@@ -21,15 +21,15 @@ public class PrimaryAttribute {
 
     public int getIntelligence(){return this.intelligence; }
 
-    public void increaseStrength(int increaseBy){
-        this.strength += increaseBy;
+    public void setStrength(int newStrengthValue){
+        this.strength = newStrengthValue;
     }
 
-    public void increaseDexterity(int increaseBy){
-        this.dexterity += increaseBy;
+    public void setDexterity(int newDexterityValue){
+        this.dexterity = newDexterityValue;
     }
 
-    public void increaseIntelligence(int increaseBy){
-        this.intelligence += increaseBy;
+    public void setIntelligence(int newIntelligenceValue){
+        this.intelligence = newIntelligenceValue;
     }
 }
