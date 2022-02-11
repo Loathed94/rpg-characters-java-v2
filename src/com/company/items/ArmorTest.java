@@ -38,4 +38,16 @@ class ArmorTest {
         Assertions.assertEquals(cloth.getArmorType(), ArmorType.CLOTH);
         Assertions.assertEquals(plate.getArmorType(), ArmorType.PLATE);
     }
+
+    @Test
+    void makeSureSendingWeaponSlotToArmorClassThrowsIAE(){
+        String message = "Armor cannot be assigned to weapon slot!";
+        Throwable expectedException = Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> {
+                    Item armor = new Armor("A fitting name", 8, EquipmentSlot.WEAPON, ArmorType.MAIL, 6, 8, 1);
+                }
+        );
+        assertEquals(expectedException.getMessage(), message);
+    }
 }
