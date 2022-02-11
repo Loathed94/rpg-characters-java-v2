@@ -21,11 +21,11 @@ public abstract class CharacterClass {
         this.name = name;
         this.baseAttributes = new PrimaryAttribute(strength, dexterity, intelligence);
         this.totalAttributes = new PrimaryAttribute(strength, dexterity, intelligence);
-        for(int i = 0; i < weaponTypes.length; i++){
-            allowedWeaponType.put(weaponTypes[i], true);
+        for(WeaponType type : weaponTypes){
+            allowedWeaponType.put(type, true);
         }
-        for(int i = 0; i < armorTypes.length; i++){
-            allowedArmorType.put(armorTypes[i], true);
+        for(ArmorType type : armorTypes){
+            allowedArmorType.put(type, true);
         }
     }
 
@@ -55,6 +55,9 @@ public abstract class CharacterClass {
     public void equipItem(Item item){
         try{
             if(item instanceof Armor){
+                if(item.getRequiredLevel() > this.level){
+                    throw new InvalidArmorException("Your level is too low for that item!");
+                }
                 if(isArmorAcceptable((Armor) item)){
                     equipment.put(item.getEquipmentSlot(), item);
                 }
@@ -63,6 +66,9 @@ public abstract class CharacterClass {
                 }
             }
             else if(item instanceof Weapon){
+                if(item.getRequiredLevel() > this.level){
+                    throw new InvalidWeaponException("Your level is too low for that item!");
+                }
                 if(isWeaponAcceptable((Weapon) item)){
                     equipment.put(item.getEquipmentSlot(), item);
                 }
