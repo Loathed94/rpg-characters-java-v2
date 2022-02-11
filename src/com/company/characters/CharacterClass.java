@@ -45,11 +45,11 @@ public abstract class CharacterClass {
     protected abstract void increaseAttributesFromLevel();
 
     private boolean isWeaponAcceptable(Weapon weapon){
-        return allowedWeaponType.get(weapon.getWeaponType()) == true;
+        return allowedWeaponType.get(weapon.getWeaponType());
     }
 
     private boolean isArmorAcceptable(Armor armor){
-        return allowedArmorType.get(armor.getArmorType()) == true;
+        return allowedArmorType.get(armor.getArmorType());
     }
 
     public void equipItem(Item item){
@@ -77,11 +77,9 @@ public abstract class CharacterClass {
                 }
             }
         }catch(InvalidArmorException e){
-            System.out.println(e.toString());
-            return;
+            System.out.println(e);
         }catch (InvalidWeaponException e){
-            System.out.println(e.toString());
-            return;
+            System.out.println(e);
         }
     }
 
