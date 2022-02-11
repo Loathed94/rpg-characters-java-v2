@@ -85,6 +85,10 @@ public abstract class CharacterClass {
         }
     }
 
+    public Item getEquipment(EquipmentSlot slot){
+        return this.equipment.get(slot);
+    }
+
     private void updateAttributes(){
         int strength = baseAttributes.getStrength();
         int dexterity = baseAttributes.getDexterity();
