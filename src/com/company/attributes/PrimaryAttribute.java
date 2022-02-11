@@ -32,4 +32,10 @@ public class PrimaryAttribute {
     public void setIntelligence(int newIntelligenceValue){
         this.intelligence = newIntelligenceValue;
     }
+
+    public void increaseStrength(int increaseBy){this.strength += increaseBy;}
+
+    public void increaseDexterity(int increaseBy){this.dexterity += increaseBy;}
+
+    public void increaseIntelligence(int increaseBy){this.intelligence += increaseBy;}
 }
