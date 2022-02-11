@@ -12,11 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class CharacterClassTest {
 
     @Test
-    void shouldThrowErrorBecauseAbstractCannotBeInitialized(){
-        //Assertions.assertThrows();
-    }
-
-    @Test
     void namesShouldBeSetCorrectlyOnInstantiationAndBeGettable(){
         CharacterClass mage = new MageClass("Khadgar");
         CharacterClass warrior = new WarriorClass("Grom Hellscream");
