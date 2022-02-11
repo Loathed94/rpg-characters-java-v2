@@ -60,6 +60,7 @@ public abstract class CharacterClass {
                 }
                 if(isArmorAcceptable((Armor) item)){
                     equipment.put(item.getEquipmentSlot(), item);
+                    updateAttributes();
                 }
                 else{
                     throw new InvalidArmorException("Armor type not acceptable for your character class!");
@@ -71,6 +72,7 @@ public abstract class CharacterClass {
                 }
                 if(isWeaponAcceptable((Weapon) item)){
                     equipment.put(item.getEquipmentSlot(), item);
+                    updateAttributes();
                 }
                 else{
                     throw new InvalidWeaponException("Weapon type not acceptable for your character class!");
@@ -84,7 +86,19 @@ public abstract class CharacterClass {
     }
 
     private void updateAttributes(){
-
+        int strength = baseAttributes.getStrength();
+        int dexterity = baseAttributes.getDexterity();
+        int intelligence = baseAttributes.getIntelligence();
+        for(Item item : equipment.values()){
+            if(item instanceof Armor) {
+                strength += ((Armor) item).getAttributes()[0];
+                dexterity += ((Armor) item).getAttributes()[1];
+                intelligence += ((Armor) item).getAttributes()[2];
+            }
+        }
+        totalAttributes.setStrength(strength);
+        totalAttributes.setDexterity(dexterity);
+        totalAttributes.setIntelligence(intelligence);
     }
 
     protected PrimaryAttribute getBaseAttributes(){
