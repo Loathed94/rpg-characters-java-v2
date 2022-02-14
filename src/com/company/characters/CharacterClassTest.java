@@ -53,25 +53,31 @@ class CharacterClassTest {
     }
 
     @Test
-    void makeSureEquippingItemWorks(){
+    void TestEquipItem_ValidWeaponForWarrior_ShouldReturnTrue(){
         CharacterClass warrior = new WarriorClass("Grom Hellscream");
-        Item plate = new Armor("Breastplate of utter Worthlessness", 0, EquipmentSlot.BODY, ArmorType.PLATE, 5, 2, 1);
-        Item sword = new Weapon("Blade of something", 0, WeaponType.SWORD, 50, 2);
+        Item sword = new Weapon("Blade of Being Equipable", 0, WeaponType.SWORD, 50, 2);
 
-        Assertions.assertNull(warrior.getEquipment(plate.getEquipmentSlot()));
-        Assertions.assertNull(warrior.getEquipment(sword.getEquipmentSlot()));
+        try {
+            Assertions.assertTrue(warrior.equipItem(sword));
+        } catch (InvalidArmorException e) {
+            fail();
+        } catch (InvalidWeaponException e) {
+            fail();
+        }
+    }
+
+    @Test
+    void TestEquipItem_ValidArmorForWarrior_ShouldReturnTrue(){
+        CharacterClass warrior = new WarriorClass("Grom Hellscream");
+        Item plate = new Armor("Breastplate That Absolutely Works For Warriors", 0, EquipmentSlot.BODY, ArmorType.PLATE, 5, 2, 1);
 
         try{
-            warrior.equipItem(plate);
-            warrior.equipItem(sword);
+            Assertions.assertTrue(warrior.equipItem(plate));
         }catch(InvalidWeaponException e){
             fail();
         }catch(InvalidArmorException e){
             fail();
         }
-
-        Assertions.assertEquals(warrior.getEquipment(plate.getEquipmentSlot()), plate);
-        Assertions.assertEquals(warrior.getEquipment(sword.getEquipmentSlot()), sword);
     }
 
     @Test
