@@ -2,6 +2,7 @@ package com.company.characters;
 
 import com.company.characters.CharacterClass;
 import com.company.characters.RogueClass;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class RogueClassTest {
 
     @Test
-    void GetAttributes_BaseAndTotalAfterIncrementLevel_ExpectedValues3And10And2(){
+    void TestGetAttributes_BaseAndTotalAfterIncrementLevel_ExpectedValues3And10And2(){
         String characterName = "Akama";
         CharacterClass rogue = new RogueClass(characterName);
         String expectedValues = "3102";
@@ -26,12 +27,12 @@ class RogueClassTest {
         actualValuesTotal += rogue.getTotalAttributes().getDexterity();
         actualValuesTotal += rogue.getTotalAttributes().getIntelligence();
 
-        assertEquals(actualValuesBase, expectedValues);
-        assertEquals(actualValuesTotal, expectedValues);
+        Assertions.assertEquals(actualValuesBase, expectedValues);
+        Assertions.assertEquals(actualValuesTotal, expectedValues);
     }
 
     @Test
-    void GetAttributes_BaseAndTotalAfterInstantiation_ExpectValues2And6And1(){
+    void TestGetAttributes_BaseAndTotalAfterInstantiation_ExpectValues2And6And1(){
         String characterName = "Akama";
         CharacterClass rogue = new RogueClass(characterName);
         String expectedValues = "261";
@@ -46,7 +47,7 @@ class RogueClassTest {
         actualValuesTotal += rogue.getTotalAttributes().getDexterity();
         actualValuesTotal += rogue.getTotalAttributes().getIntelligence();
 
-        assertEquals(actualValuesBase, expectedValues);
-        assertEquals(actualValuesTotal, expectedValues);
+        Assertions.assertEquals(actualValuesBase, expectedValues);
+        Assertions.assertEquals(actualValuesTotal, expectedValues);
     }
 }
