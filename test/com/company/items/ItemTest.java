@@ -1,32 +1,25 @@
 package com.company.items;
 
-import com.company.items.EquipmentSlot;
-import com.company.items.Item;
-import com.company.items.Weapon;
-import com.company.items.WeaponType;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class ItemTest {
 
     @Test
-    void makeSureGettersWorkAsExpected(){
-        Item weapon1 = new Weapon("Destroyer of Worlds", 100, WeaponType.HAMMER, 600, 2);
-        Item weapon2 = new Weapon("Blunt Dagger of Uselessness", 0, WeaponType.DAGGER, 1, 2);
-        Item weapon3 = new Weapon("A decent wand", 30, WeaponType.WAND, 60, 3);
+    void TestItemGetters_GettersAfterInstantiation_ShouldReturnSameValuesAsWasPutInParameter(){
+        Item weapon = new Weapon("Destroyer of Worlds", 100, WeaponType.HAMMER, 600, 2);
 
-        Assertions.assertEquals(weapon1.getName(), "Destroyer of Worlds");
-        Assertions.assertEquals(weapon2.getName(), "Blunt Dagger of Uselessness");
-        Assertions.assertEquals(weapon3.getName(), "A decent wand");
+        String actualName = weapon.getName();
+        String expectedName = "Destroyer of Worlds";
+        int actualRequiredLevel = weapon.getRequiredLevel();
+        int expectedRequiredLevel = 100;
+        EquipmentSlot actualSlot = weapon.getEquipmentSlot();
+        EquipmentSlot expectedSlot = EquipmentSlot.WEAPON;
 
-        Assertions.assertEquals(weapon1.getRequiredLevel(), 100);
-        Assertions.assertEquals(weapon2.getRequiredLevel(), 0);
-        Assertions.assertEquals(weapon3.getRequiredLevel(), 30);
-
-        Assertions.assertEquals(weapon1.getEquipmentSlot(), EquipmentSlot.WEAPON);
-        Assertions.assertEquals(weapon2.getEquipmentSlot(), EquipmentSlot.WEAPON);
-        Assertions.assertEquals(weapon3.getEquipmentSlot(), EquipmentSlot.WEAPON);
+        Assertions.assertEquals(actualName, expectedName);
+        Assertions.assertEquals(actualRequiredLevel, expectedRequiredLevel);
+        Assertions.assertEquals(actualSlot, expectedSlot);
     }
 }
