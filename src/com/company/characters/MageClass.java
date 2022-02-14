@@ -8,10 +8,12 @@ import com.company.items.WeaponType;
 
 public class MageClass extends CharacterClass{
 
+    //A magic wielding Hero class that extends CharacterClass.
     public MageClass(String name){
         super(name, 1, 1, 8, new WeaponType[]{WeaponType.STAFF, WeaponType.WAND}, new ArmorType[]{ArmorType.CLOTH});
     }
 
+    //Overridden method from superclass, increases values of strength, dexterity and intelligence each time mage levels up.
     @Override
     protected void increaseAttributesFromLevel() {
         PrimaryAttribute base = getBaseAttributes();
@@ -24,6 +26,7 @@ public class MageClass extends CharacterClass{
         total.increaseIntelligence(5);
     }
 
+    //Overridden method from superclass, calculates DPS for Mage using Intelligence and returns the value.
     @Override
     public double getDPS() {
         double weaponDPS;
