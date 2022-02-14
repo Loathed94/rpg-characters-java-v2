@@ -58,31 +58,34 @@ public abstract class CharacterClass {
         return true;
     }
 
-    public void equipItem(Item item) throws InvalidArmorException, InvalidWeaponException {
-            if(item instanceof Armor){
-                if(item.getRequiredLevel() > this.level){
-                    throw new InvalidArmorException("Your level is too low for that item!");
-                }
-                else if(isArmorAcceptable((Armor) item)){
-                    equipment.put(item.getEquipmentSlot(), item);
-                    updateAttributes();
-                }
-                else{
-                    throw new InvalidArmorException("Armor type not acceptable for your character class!");
-                }
+    public boolean equipItem(Item item) throws InvalidArmorException, InvalidWeaponException {
+        if(item instanceof Armor){
+            if(item.getRequiredLevel() > this.level){
+                throw new InvalidArmorException("Your level is too low for that item!");
             }
-            else if(item instanceof Weapon){
-                if(item.getRequiredLevel() > this.level){
-                    throw new InvalidWeaponException("Your level is too low for that item!");
-                }
-                else if(isWeaponAcceptable((Weapon) item)){
-                    equipment.put(item.getEquipmentSlot(), item);
-                    updateAttributes();
-                }
-                else{
-                    throw new InvalidWeaponException("Weapon type not acceptable for your character class!");
-                }
+            else if(isArmorAcceptable((Armor) item)){
+                equipment.put(item.getEquipmentSlot(), item);
+                updateAttributes();
+                return true;
             }
+            else{
+                throw new InvalidArmorException("Armor type not acceptable for your character class!");
+            }
+        }
+        else if(item instanceof Weapon){
+            if(item.getRequiredLevel() > this.level){
+                throw new InvalidWeaponException("Your level is too low for that item!");
+            }
+            else if(isWeaponAcceptable((Weapon) item)){
+                equipment.put(item.getEquipmentSlot(), item);
+                updateAttributes();
+                return true;
+            }
+            else{
+                throw new InvalidWeaponException("Weapon type not acceptable for your character class!");
+            }
+        }
+        return false;
     }
 
     public Item getEquipment(EquipmentSlot slot){
