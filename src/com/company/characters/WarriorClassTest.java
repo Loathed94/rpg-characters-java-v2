@@ -7,33 +7,45 @@ import static org.junit.jupiter.api.Assertions.*;
 class WarriorClassTest {
 
     @Test
-    void makeSureAttributesIncreaseAsTheyShouldForMageClass(){
-        CharacterClass warrior = new WarriorClass("Warrior");
-
-        assertEquals(warrior.getBaseAttributes().getStrength(), 5);
-        assertEquals(warrior.getBaseAttributes().getDexterity(), 2);
-        assertEquals(warrior.getBaseAttributes().getIntelligence(), 1);
-        assertEquals(warrior.getTotalAttributes().getStrength(), 5);
-        assertEquals(warrior.getTotalAttributes().getDexterity(), 2);
-        assertEquals(warrior.getTotalAttributes().getIntelligence(), 1);
+    void GetAttributes_BaseAndTotalAfterIncrementLevel_ExpectedValues8And4And2(){
+        String characterName = "Grom Hellscream";
+        CharacterClass warrior = new WarriorClass(characterName);
+        String expectedValues = "842";
+        String actualValuesBase = "";
+        String actualValuesTotal = "";
 
         warrior.incrementLevel();
 
-        assertEquals(warrior.getBaseAttributes().getStrength(), 8);
-        assertEquals(warrior.getBaseAttributes().getDexterity(), 4);
-        assertEquals(warrior.getBaseAttributes().getIntelligence(), 2);
-        assertEquals(warrior.getTotalAttributes().getStrength(), 8);
-        assertEquals(warrior.getTotalAttributes().getDexterity(), 4);
-        assertEquals(warrior.getTotalAttributes().getIntelligence(), 2);
+        actualValuesBase += warrior.getBaseAttributes().getStrength();
+        actualValuesBase += warrior.getBaseAttributes().getDexterity();
+        actualValuesBase += warrior.getBaseAttributes().getIntelligence();
 
-        warrior.incrementLevel();
+        actualValuesTotal += warrior.getTotalAttributes().getStrength();
+        actualValuesTotal += warrior.getTotalAttributes().getDexterity();
+        actualValuesTotal += warrior.getTotalAttributes().getIntelligence();
 
-        assertEquals(warrior.getBaseAttributes().getStrength(), 11);
-        assertEquals(warrior.getBaseAttributes().getDexterity(), 6);
-        assertEquals(warrior.getBaseAttributes().getIntelligence(), 3);
-        assertEquals(warrior.getTotalAttributes().getStrength(), 11);
-        assertEquals(warrior.getTotalAttributes().getDexterity(), 6);
-        assertEquals(warrior.getTotalAttributes().getIntelligence(), 3);
+        assertEquals(actualValuesBase, expectedValues);
+        assertEquals(actualValuesTotal, expectedValues);
+    }
+
+    @Test
+    void GetAttributes_BaseAndTotalAfterInstantiation_ExpectValues5And2And1(){
+        String characterName = "Grom Hellscream";
+        CharacterClass warrior = new WarriorClass(characterName);
+        String expectedValues = "521";
+        String actualValuesBase = "";
+        String actualValuesTotal = "";
+
+        actualValuesBase += warrior.getBaseAttributes().getStrength();
+        actualValuesBase += warrior.getBaseAttributes().getDexterity();
+        actualValuesBase += warrior.getBaseAttributes().getIntelligence();
+
+        actualValuesTotal += warrior.getTotalAttributes().getStrength();
+        actualValuesTotal += warrior.getTotalAttributes().getDexterity();
+        actualValuesTotal += warrior.getTotalAttributes().getIntelligence();
+
+        assertEquals(actualValuesBase, expectedValues);
+        assertEquals(actualValuesTotal, expectedValues);
     }
 
 }
