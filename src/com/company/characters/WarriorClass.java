@@ -8,10 +8,12 @@ import com.company.items.WeaponType;
 
 public class WarriorClass extends CharacterClass{
 
+    //A melee-weapon wielding Hero class that extends CharacterClass.
     public WarriorClass(String name){
         super(name, 5, 2, 1, new WeaponType[]{WeaponType.AXE, WeaponType.HAMMER, WeaponType.SWORD}, new ArmorType[]{ArmorType.MAIL, ArmorType.PLATE});
     }
 
+    //Overridden method from superclass, increases values of strength, dexterity and intelligence each time warrior levels up.
     @Override
     protected void increaseAttributesFromLevel() {
         PrimaryAttribute base = getBaseAttributes();
@@ -24,6 +26,7 @@ public class WarriorClass extends CharacterClass{
         total.increaseIntelligence(1);
     }
 
+    //Overridden method from superclass, calculates DPS for Warrior using Strength and returns the value.
     @Override
     public double getDPS() {
         double weaponDPS;
