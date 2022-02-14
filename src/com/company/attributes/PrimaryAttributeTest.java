@@ -6,36 +6,58 @@ import org.junit.jupiter.api.Test;
 class PrimaryAttributeTest {
 
     @Test
-    void makeSureValueOfStrengthReturnedByGetterIsCorrect() {
-        PrimaryAttribute strengthIsNine = new PrimaryAttribute(9, 5, 7);
-        PrimaryAttribute strengthIsThree = new PrimaryAttribute(3, 6, 1);
-        PrimaryAttribute strengthIsOneHundred = new PrimaryAttribute(100, 86, 30);
+    void GetStrength_ValueRightAfterInstantiation_ShouldReturnSameValueAsWasSetInParameter() {
+        int strength1 = 9, dexterity1 = 5, intelligence1 = 7;
+        int strength2 = 3, dexterity2 = 6, intelligence2 = 1;
+        int strength3 = 100, dexterity3 = 86, intelligence3 = 30;
+        PrimaryAttribute strengthIsNine = new PrimaryAttribute(strength1, dexterity1, intelligence1);
+        PrimaryAttribute strengthIsThree = new PrimaryAttribute(strength2, dexterity2, intelligence2);
+        PrimaryAttribute strengthIsOneHundred = new PrimaryAttribute(strength3, dexterity3, intelligence3);
 
-        Assertions.assertEquals(strengthIsNine.getStrength(), 9);
-        Assertions.assertEquals(strengthIsThree.getStrength(), 3);
-        Assertions.assertEquals(strengthIsOneHundred.getStrength(), 100);
+        int strengthReturned1 = strengthIsNine.getStrength();
+        int strengthReturned2 = strengthIsThree.getStrength();
+        int strengthReturned3 = strengthIsOneHundred.getStrength();
+
+        Assertions.assertEquals(strengthReturned1, strength1);
+        Assertions.assertEquals(strengthReturned2, strength2);
+        Assertions.assertEquals(strengthReturned3, strength3);
     }
 
     @Test
-    void makeSureValueOfDexterityReturnedByGetterIsCorrect() {
-        PrimaryAttribute dexterityIsTwenty = new PrimaryAttribute(9, 20, 7);
-        PrimaryAttribute dexterityIsSix = new PrimaryAttribute(3, 6, 1);
-        PrimaryAttribute dexterityIsEightySix = new PrimaryAttribute(100, 86, 30);
+    void GetDexterity_ValueRightAfterInstantiation_ShouldReturnSameValueAsWasSetInParameter() {
+        int strength1 = 9, dexterity1 = 20, intelligence1 = 7;
+        int strength2 = 3, dexterity2 = 6, intelligence2 = 1;
+        int strength3 = 100, dexterity3 = 86, intelligence3 = 30;
+        PrimaryAttribute dexterityIsTwenty = new PrimaryAttribute(strength1, dexterity1, intelligence1);
+        PrimaryAttribute dexterityIsSix = new PrimaryAttribute(strength2, dexterity2, intelligence2);
+        PrimaryAttribute dexterityIsEightySix = new PrimaryAttribute(strength3, dexterity3, intelligence3);
 
-        Assertions.assertEquals(dexterityIsTwenty.getDexterity(), 20);
-        Assertions.assertEquals(dexterityIsSix.getDexterity(), 6);
-        Assertions.assertEquals(dexterityIsEightySix.getDexterity(), 86);
+        int dexterityReturned1 = dexterityIsTwenty.getDexterity();
+        int dexterityReturned2 = dexterityIsSix.getDexterity();
+        int dexterityReturned3 = dexterityIsEightySix.getDexterity();
+
+
+        Assertions.assertEquals(dexterityReturned1, dexterity1);
+        Assertions.assertEquals(dexterityReturned2, dexterity2);
+        Assertions.assertEquals(dexterityReturned3, dexterity3);
     }
 
     @Test
-    void makeSureValueOfIntelligenceReturnedByGetterIsCorrect() {
-        PrimaryAttribute intelligenceIsTwo = new PrimaryAttribute(9, 20, 2);
-        PrimaryAttribute intelligenceIsFiftyNine = new PrimaryAttribute(3, 6, 59);
-        PrimaryAttribute intelligenceIsThirty = new PrimaryAttribute(100, 86, 30);
+    void GetIntelligence_ValueRightAfterInstantiation_ShouldReturnSameValueAsWasSetInParameter() {
+        int strength1 = 9, dexterity1 = 20, intelligence1 = 2;
+        int strength2 = 3, dexterity2 = 6, intelligence2 = 59;
+        int strength3 = 100, dexterity3 = 86, intelligence3 = 30;
+        PrimaryAttribute intelligenceIsTwo = new PrimaryAttribute(strength1, dexterity1, intelligence1);
+        PrimaryAttribute intelligenceIsFiftyNine = new PrimaryAttribute(strength2, dexterity2, intelligence2);
+        PrimaryAttribute intelligenceIsThirty = new PrimaryAttribute(strength3, dexterity3, intelligence3);
 
-        Assertions.assertEquals(intelligenceIsTwo.getIntelligence(), 2);
-        Assertions.assertEquals(intelligenceIsFiftyNine.getIntelligence(), 59);
-        Assertions.assertEquals(intelligenceIsThirty.getIntelligence(), 30);
+        int intelligenceReturned1 = intelligenceIsTwo.getIntelligence();
+        int intelligenceReturned2 = intelligenceIsFiftyNine.getIntelligence();
+        int intelligenceReturned3 = intelligenceIsThirty.getIntelligence();
+
+        Assertions.assertEquals(intelligenceReturned1, intelligence1);
+        Assertions.assertEquals(intelligenceReturned2, intelligence2);
+        Assertions.assertEquals(intelligenceReturned3, intelligence3);
     }
 
     @Test
