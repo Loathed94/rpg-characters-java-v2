@@ -161,4 +161,31 @@ class CharacterClassTest {
 
         Assertions.assertEquals(actualDPS, expectedDPS);
     }
+
+    @Test
+    void TestGetDPS_Level1WarriorWithWeapon_ShouldReturnValue13Point23() throws InvalidArmorException, InvalidWeaponException {
+        CharacterClass warrior = new WarriorClass("Grom Hellscream");
+        Item hammer = new Weapon("Hammer of Slight Damageness", 1, WeaponType.HAMMER, 14, 0.9);
+        double expectedDPS = (14*0.9)*(1.0+(5.0/100));
+
+        warrior.equipItem(hammer);
+        double actualDPS = warrior.getDPS();
+
+        Assertions.assertEquals(actualDPS, expectedDPS);
+    }
+
+    @Test
+    void TestGetDPS_Level1WarriorWithWeaponAndArmor_ShouldReturnValue13Point608() throws InvalidArmorException, InvalidWeaponException {
+        CharacterClass warrior = new WarriorClass("Grom Hellscream");
+        Item hammer = new Weapon("Hammer of Slight Damageness", 1, WeaponType.HAMMER, 14, 0.9);
+        Item plate = new Armor("Breastplate of Being Slightly Useful", 1, EquipmentSlot.BODY, ArmorType.PLATE, 3, 1, 1);
+
+        double expectedDPS = (14*0.9)*(1.0+(8.0/100));
+
+        warrior.equipItem(hammer);
+        warrior.equipItem(plate);
+        double actualDPS = warrior.getDPS();
+
+        Assertions.assertEquals(actualDPS, expectedDPS);
+    }
 }
