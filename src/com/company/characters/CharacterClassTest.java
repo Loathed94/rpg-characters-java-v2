@@ -109,4 +109,40 @@ class CharacterClassTest {
 
         Assertions.assertEquals(actualExceptionMessage, expectedExceptionMessage);
     }
+
+    @Test
+    void EquipItem_WeaponTypeNotAllowedForWarriors_ShouldThrowInvalidWeaponException(){
+        CharacterClass warrior = new WarriorClass("Grom Hellscream");
+        Item bow = new Weapon("Bow That Only Rangers Can Use", 1, WeaponType.BOW, 50, 3.2);
+
+        String expectedExceptionMessage = "InvalidWeaponException thrown: Weapon type not acceptable for your character class!";
+
+        Throwable theExceptionThrown = assertThrows(
+                InvalidWeaponException.class,
+                () -> {
+                    warrior.equipItem(bow);
+                }
+        );
+        String actualExceptionMessage = theExceptionThrown.toString();
+
+        Assertions.assertEquals(actualExceptionMessage, expectedExceptionMessage);
+    }
+
+    @Test
+    void EquipItem_ArmorTypeNotAllowedForWarriors_ShouldThrowInvalidArmorException(){
+        CharacterClass warrior = new WarriorClass("Grom Hellscream");
+        Item hood = new Armor("Cloth Hood of Too Soft For A Warrior", 1, EquipmentSlot.HEAD, ArmorType.CLOTH, 2, 1, 23);
+
+        String expectedExceptionMessage = "InvalidArmorException thrown: Armor type not acceptable for your character class!";
+
+        Throwable theExceptionThrown = assertThrows(
+                InvalidArmorException.class,
+                () -> {
+                    warrior.equipItem(hood);
+                }
+        );
+        String actualExceptionMessage = theExceptionThrown.toString();
+
+        Assertions.assertEquals(actualExceptionMessage, expectedExceptionMessage);
+    }
 }
