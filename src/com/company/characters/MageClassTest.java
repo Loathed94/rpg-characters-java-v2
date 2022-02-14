@@ -8,33 +8,45 @@ import static org.junit.jupiter.api.Assertions.*;
 class MageClassTest {
 
     @Test
-    void makeSureAttributesIncreaseAsTheyShouldForMageClass(){
-        CharacterClass mage = new MageClass("Khadgar");
-
-        Assertions.assertEquals(mage.getBaseAttributes().getStrength(), 1);
-        Assertions.assertEquals(mage.getBaseAttributes().getDexterity(), 1);
-        Assertions.assertEquals(mage.getBaseAttributes().getIntelligence(), 8);
-        Assertions.assertEquals(mage.getTotalAttributes().getStrength(), 1);
-        Assertions.assertEquals(mage.getTotalAttributes().getDexterity(), 1);
-        Assertions.assertEquals(mage.getTotalAttributes().getIntelligence(), 8);
+    void GetAttributes_BaseAndTotalAfterIncrementLevel_ExpectedValues2And2And13(){
+        String characterName = "Khadgar";
+        CharacterClass mage = new MageClass(characterName);
+        String expectedValues = "2213";
+        String actualValuesBase = "";
+        String actualValuesTotal = "";
 
         mage.incrementLevel();
 
-        Assertions.assertEquals(mage.getBaseAttributes().getStrength(), 2);
-        Assertions.assertEquals(mage.getBaseAttributes().getDexterity(), 2);
-        Assertions.assertEquals(mage.getBaseAttributes().getIntelligence(), 13);
-        Assertions.assertEquals(mage.getTotalAttributes().getStrength(), 2);
-        Assertions.assertEquals(mage.getTotalAttributes().getDexterity(), 2);
-        Assertions.assertEquals(mage.getTotalAttributes().getIntelligence(), 13);
+        actualValuesBase += mage.getBaseAttributes().getStrength();
+        actualValuesBase += mage.getBaseAttributes().getDexterity();
+        actualValuesBase += mage.getBaseAttributes().getIntelligence();
 
-        mage.incrementLevel();
+        actualValuesTotal += mage.getTotalAttributes().getStrength();
+        actualValuesTotal += mage.getTotalAttributes().getDexterity();
+        actualValuesTotal += mage.getTotalAttributes().getIntelligence();
 
-        Assertions.assertEquals(mage.getBaseAttributes().getStrength(), 3);
-        Assertions.assertEquals(mage.getBaseAttributes().getDexterity(), 3);
-        Assertions.assertEquals(mage.getBaseAttributes().getIntelligence(), 18);
-        Assertions.assertEquals(mage.getTotalAttributes().getStrength(), 3);
-        Assertions.assertEquals(mage.getTotalAttributes().getDexterity(), 3);
-        Assertions.assertEquals(mage.getTotalAttributes().getIntelligence(), 18);
+        Assertions.assertEquals(actualValuesBase, expectedValues);
+        Assertions.assertEquals(actualValuesTotal, expectedValues);
+    }
+
+    @Test
+    void GetAttributes_BaseAndTotalAfterInstantiation_ExpectValues1And1And8(){
+        String characterName = "Khadgar";
+        CharacterClass mage = new MageClass(characterName);
+        String expectedValues = "118";
+        String actualValuesBase = "";
+        String actualValuesTotal = "";
+
+        actualValuesBase += mage.getBaseAttributes().getStrength();
+        actualValuesBase += mage.getBaseAttributes().getDexterity();
+        actualValuesBase += mage.getBaseAttributes().getIntelligence();
+
+        actualValuesTotal += mage.getTotalAttributes().getStrength();
+        actualValuesTotal += mage.getTotalAttributes().getDexterity();
+        actualValuesTotal += mage.getTotalAttributes().getIntelligence();
+
+        Assertions.assertEquals(actualValuesBase, expectedValues);
+        Assertions.assertEquals(actualValuesTotal, expectedValues);
     }
 
 }
