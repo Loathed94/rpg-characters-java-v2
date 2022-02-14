@@ -8,32 +8,44 @@ import static org.junit.jupiter.api.Assertions.*;
 class RangerClassTest {
 
     @Test
-    void makeSureAttributesIncreaseAsTheyShouldForMageClass(){
-        CharacterClass ranger = new RangerClass("Ranger");
-
-        assertEquals(ranger.getBaseAttributes().getStrength(), 1);
-        assertEquals(ranger.getBaseAttributes().getDexterity(), 7);
-        assertEquals(ranger.getBaseAttributes().getIntelligence(), 1);
-        assertEquals(ranger.getTotalAttributes().getStrength(), 1);
-        assertEquals(ranger.getTotalAttributes().getDexterity(), 7);
-        assertEquals(ranger.getTotalAttributes().getIntelligence(), 1);
+    void GetAttributes_BaseAndTotalAfterIncrementLevel_ExpectedValues2And12And2(){
+        String characterName = "Sylvanas Windrunner";
+        CharacterClass ranger = new RangerClass(characterName);
+        String expectedValues = "2122";
+        String actualValuesBase = "";
+        String actualValuesTotal = "";
 
         ranger.incrementLevel();
 
-        assertEquals(ranger.getBaseAttributes().getStrength(), 2);
-        assertEquals(ranger.getBaseAttributes().getDexterity(), 12);
-        assertEquals(ranger.getBaseAttributes().getIntelligence(), 2);
-        assertEquals(ranger.getTotalAttributes().getStrength(), 2);
-        assertEquals(ranger.getTotalAttributes().getDexterity(), 12);
-        assertEquals(ranger.getTotalAttributes().getIntelligence(), 2);
+        actualValuesBase += ranger.getBaseAttributes().getStrength();
+        actualValuesBase += ranger.getBaseAttributes().getDexterity();
+        actualValuesBase += ranger.getBaseAttributes().getIntelligence();
 
-        ranger.incrementLevel();
+        actualValuesTotal += ranger.getTotalAttributes().getStrength();
+        actualValuesTotal += ranger.getTotalAttributes().getDexterity();
+        actualValuesTotal += ranger.getTotalAttributes().getIntelligence();
 
-        assertEquals(ranger.getBaseAttributes().getStrength(), 3);
-        assertEquals(ranger.getBaseAttributes().getDexterity(), 17);
-        assertEquals(ranger.getBaseAttributes().getIntelligence(), 3);
-        assertEquals(ranger.getTotalAttributes().getStrength(), 3);
-        assertEquals(ranger.getTotalAttributes().getDexterity(), 17);
-        assertEquals(ranger.getTotalAttributes().getIntelligence(), 3);
+        assertEquals(actualValuesBase, expectedValues);
+        assertEquals(actualValuesTotal, expectedValues);
+    }
+
+    @Test
+    void GetAttributes_BaseAndTotalAfterInstantiation_ExpectValues1And7And1(){
+        String characterName = "Sylvanas Windrunner";
+        CharacterClass ranger = new RangerClass(characterName);
+        String expectedValues = "171";
+        String actualValuesBase = "";
+        String actualValuesTotal = "";
+
+        actualValuesBase += ranger.getBaseAttributes().getStrength();
+        actualValuesBase += ranger.getBaseAttributes().getDexterity();
+        actualValuesBase += ranger.getBaseAttributes().getIntelligence();
+
+        actualValuesTotal += ranger.getTotalAttributes().getStrength();
+        actualValuesTotal += ranger.getTotalAttributes().getDexterity();
+        actualValuesTotal += ranger.getTotalAttributes().getIntelligence();
+
+        assertEquals(actualValuesBase, expectedValues);
+        assertEquals(actualValuesTotal, expectedValues);
     }
 }
