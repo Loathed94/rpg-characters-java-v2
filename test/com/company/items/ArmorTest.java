@@ -1,5 +1,9 @@
 package com.company.items;
 
+import com.company.items.Armor;
+import com.company.items.ArmorType;
+import com.company.items.EquipmentSlot;
+import com.company.items.Item;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

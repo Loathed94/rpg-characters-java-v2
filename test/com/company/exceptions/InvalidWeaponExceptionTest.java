@@ -1,20 +1,21 @@
 package com.company.exceptions;
 
+import com.company.exceptions.InvalidWeaponException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class InvalidArmorExceptionTest {
+class InvalidWeaponExceptionTest {
 
     @Test
     void makeSureTheExceptionWorksAsExpected(){
         String message = "An error occurred";
         Throwable expectedException = assertThrows(
-                InvalidArmorException.class,
+                InvalidWeaponException.class,
                 () -> {
-                    throw new InvalidArmorException(message);
+                    throw new InvalidWeaponException(message);
                 }
         );
-        assertEquals(expectedException.toString(), "InvalidArmorException thrown: "+message);
+        assertEquals(expectedException.toString(), "InvalidWeaponException thrown: "+message);
     }
 }

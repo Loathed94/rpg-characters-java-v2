@@ -1,5 +1,8 @@
 package com.company.characters;
 
+//import com.company.characters.CharacterClass;
+import com.company.characters.CharacterClass;
+import com.company.characters.WarriorClass;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

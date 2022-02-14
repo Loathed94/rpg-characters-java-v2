@@ -1,5 +1,7 @@
 package com.company.characters;
 
+import com.company.characters.CharacterClass;
+import com.company.characters.MageClass;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

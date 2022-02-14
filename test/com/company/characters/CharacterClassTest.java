@@ -1,5 +1,6 @@
 package com.company.characters;
 
+import com.company.characters.*;
 import com.company.exceptions.InvalidArmorException;
 import com.company.exceptions.InvalidWeaponException;
 import com.company.items.*;
@@ -59,9 +60,7 @@ class CharacterClassTest {
 
         try {
             Assertions.assertTrue(warrior.equipItem(sword));
-        } catch (InvalidArmorException e) {
-            fail();
-        } catch (InvalidWeaponException e) {
+        } catch (Exception e) {
             fail();
         }
     }
@@ -73,9 +72,7 @@ class CharacterClassTest {
 
         try{
             Assertions.assertTrue(warrior.equipItem(plate));
-        }catch(InvalidWeaponException e){
-            fail();
-        }catch(InvalidArmorException e){
+        }catch(Exception e){
             fail();
         }
     }

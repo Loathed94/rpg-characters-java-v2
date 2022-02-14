@@ -1,5 +1,7 @@
 package com.company.items;
 
+import com.company.items.Weapon;
+import com.company.items.WeaponType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
