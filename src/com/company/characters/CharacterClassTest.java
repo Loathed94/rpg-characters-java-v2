@@ -30,7 +30,7 @@ class CharacterClassTest {
     }
 
     @Test
-    void GetLevel_LevelAfterUsingIncrementLevel_ShouldReturnTheValue2(){
+    void TestGetLevel_LevelAfterUsingIncrementLevel_ShouldReturnTheValue2(){
         String characterName = "Grom Hellscream";
         int expectedLevel = 2;
         CharacterClass warrior = new WarriorClass(characterName);
@@ -42,7 +42,7 @@ class CharacterClassTest {
     }
 
     @Test
-    void GetLevel_LevelAtInstantiation_ShouldReturnTheValue1(){
+    void TestGetLevel_LevelAtInstantiation_ShouldReturnTheValue1(){
         String characterName = "Grom Hellscream";
         int expectedLevel = 1;
         CharacterClass warrior = new WarriorClass(characterName);
@@ -81,7 +81,7 @@ class CharacterClassTest {
     }
 
     @Test
-    void EquipItem_ItemLevelIsHigherThanCharacter_ShouldThrowInvalidArmorException(){
+    void TestEquipItem_ItemLevelIsHigherThanCharacter_ShouldThrowInvalidArmorException(){
         CharacterClass warrior = new WarriorClass("Grom Hellscream");
         Item plate = new Armor("Breastplate of Too High Level For You", 2, EquipmentSlot.BODY, ArmorType.PLATE, 23, 10, 5);
 
@@ -99,7 +99,7 @@ class CharacterClassTest {
     }
 
     @Test
-    void EquipItem_ItemLevelIsHigherThanCharacter_ShouldThrowInvalidWeaponException(){
+    void TestEquipItem_ItemLevelIsHigherThanCharacter_ShouldThrowInvalidWeaponException(){
         CharacterClass warrior = new WarriorClass("Grom Hellscream");
         Item sword = new Weapon("Blade You Cannot Wield", 2, WeaponType.SWORD, 50, 2);
 
@@ -117,7 +117,7 @@ class CharacterClassTest {
     }
 
     @Test
-    void EquipItem_WeaponTypeNotAllowedForWarriors_ShouldThrowInvalidWeaponException(){
+    void TestEquipItem_WeaponTypeNotAllowedForWarriors_ShouldThrowInvalidWeaponException(){
         CharacterClass warrior = new WarriorClass("Grom Hellscream");
         Item bow = new Weapon("Bow That Only Rangers Can Use", 1, WeaponType.BOW, 50, 3.2);
 
@@ -135,7 +135,7 @@ class CharacterClassTest {
     }
 
     @Test
-    void EquipItem_ArmorTypeNotAllowedForWarriors_ShouldThrowInvalidArmorException(){
+    void TestEquipItem_ArmorTypeNotAllowedForWarriors_ShouldThrowInvalidArmorException(){
         CharacterClass warrior = new WarriorClass("Grom Hellscream");
         Item hood = new Armor("Cloth Hood of Too Soft For A Warrior", 1, EquipmentSlot.HEAD, ArmorType.CLOTH, 2, 1, 23);
 
