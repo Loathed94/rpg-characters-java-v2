@@ -45,11 +45,17 @@ public abstract class CharacterClass {
     protected abstract void increaseAttributesFromLevel();
 
     private boolean isWeaponAcceptable(Weapon weapon){
-        return allowedWeaponType.get(weapon.getWeaponType());
+        if(allowedWeaponType.get(weapon.getWeaponType()) == null){
+            return false;
+        }
+        return true;
     }
 
     private boolean isArmorAcceptable(Armor armor){
-        return allowedArmorType.get(armor.getArmorType());
+        if(allowedArmorType.get(armor.getArmorType()) == null){
+            return false;
+        }
+        return true;
     }
 
     public void equipItem(Item item) throws InvalidArmorException, InvalidWeaponException {
@@ -57,7 +63,7 @@ public abstract class CharacterClass {
                 if(item.getRequiredLevel() > this.level){
                     throw new InvalidArmorException("Your level is too low for that item!");
                 }
-                if(isArmorAcceptable((Armor) item)){
+                else if(isArmorAcceptable((Armor) item)){
                     equipment.put(item.getEquipmentSlot(), item);
                     updateAttributes();
                 }
@@ -69,7 +75,7 @@ public abstract class CharacterClass {
                 if(item.getRequiredLevel() > this.level){
                     throw new InvalidWeaponException("Your level is too low for that item!");
                 }
-                if(isWeaponAcceptable((Weapon) item)){
+                else if(isWeaponAcceptable((Weapon) item)){
                     equipment.put(item.getEquipmentSlot(), item);
                     updateAttributes();
                 }
