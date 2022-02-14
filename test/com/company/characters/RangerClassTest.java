@@ -5,12 +5,11 @@ import com.company.characters.RangerClass;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class RangerClassTest {
 
     @Test
-    void GetAttributes_BaseAndTotalAfterIncrementLevel_ExpectedValues2And12And2(){
+    void TestGetAttributes_BaseAndTotalAfterIncrementLevel_ExpectedValues2And12And2(){
         String characterName = "Sylvanas Windrunner";
         CharacterClass ranger = new RangerClass(characterName);
         String expectedValues = "2122";
@@ -27,12 +26,12 @@ class RangerClassTest {
         actualValuesTotal += ranger.getTotalAttributes().getDexterity();
         actualValuesTotal += ranger.getTotalAttributes().getIntelligence();
 
-        assertEquals(actualValuesBase, expectedValues);
-        assertEquals(actualValuesTotal, expectedValues);
+        Assertions.assertEquals(actualValuesBase, expectedValues);
+        Assertions.assertEquals(actualValuesTotal, expectedValues);
     }
 
     @Test
-    void GetAttributes_BaseAndTotalAfterInstantiation_ExpectValues1And7And1(){
+    void TestGetAttributes_BaseAndTotalAfterInstantiation_ExpectValues1And7And1(){
         String characterName = "Sylvanas Windrunner";
         CharacterClass ranger = new RangerClass(characterName);
         String expectedValues = "171";
@@ -47,7 +46,7 @@ class RangerClassTest {
         actualValuesTotal += ranger.getTotalAttributes().getDexterity();
         actualValuesTotal += ranger.getTotalAttributes().getIntelligence();
 
-        assertEquals(actualValuesBase, expectedValues);
-        assertEquals(actualValuesTotal, expectedValues);
+        Assertions.assertEquals(actualValuesBase, expectedValues);
+        Assertions.assertEquals(actualValuesTotal, expectedValues);
     }
 }
