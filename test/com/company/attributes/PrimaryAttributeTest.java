@@ -1,13 +1,12 @@
 package com.company.attributes;
 
-import com.company.attributes.PrimaryAttribute;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class PrimaryAttributeTest {
 
     @Test
-    void GetStrength_ValueRightAfterInstantiation_ShouldReturnSameValueAsWasSetInParameter() {
+    void TestGetStrength_ValueRightAfterInstantiation_ShouldReturnSameValueAsWasSetInParameter() {
         int strength1 = 9, dexterity1 = 5, intelligence1 = 7;
         int strength2 = 3, dexterity2 = 6, intelligence2 = 1;
         int strength3 = 100, dexterity3 = 86, intelligence3 = 30;
@@ -25,7 +24,7 @@ class PrimaryAttributeTest {
     }
 
     @Test
-    void GetDexterity_ValueRightAfterInstantiation_ShouldReturnSameValueAsWasSetInParameter() {
+    void TestGetDexterity_ValueRightAfterInstantiation_ShouldReturnSameValueAsWasSetInParameter() {
         int strength1 = 9, dexterity1 = 20, intelligence1 = 7;
         int strength2 = 3, dexterity2 = 6, intelligence2 = 1;
         int strength3 = 100, dexterity3 = 86, intelligence3 = 30;
@@ -44,7 +43,7 @@ class PrimaryAttributeTest {
     }
 
     @Test
-    void GetIntelligence_ValueRightAfterInstantiation_ShouldReturnSameValueAsWasSetInParameter() {
+    void TestGetIntelligence_ValueRightAfterInstantiation_ShouldReturnSameValueAsWasSetInParameter() {
         int strength1 = 9, dexterity1 = 20, intelligence1 = 2;
         int strength2 = 3, dexterity2 = 6, intelligence2 = 59;
         int strength3 = 100, dexterity3 = 86, intelligence3 = 30;
