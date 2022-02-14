@@ -1,16 +1,14 @@
 package com.company.characters;
 
-//import com.company.characters.CharacterClass;
-import com.company.characters.CharacterClass;
-import com.company.characters.WarriorClass;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class WarriorClassTest {
 
     @Test
-    void GetAttributes_BaseAndTotalAfterIncrementLevel_ExpectedValues8And4And2(){
+    void TestGetAttributes_BaseAndTotalAfterIncrementLevel_ExpectedValues8And4And2(){
         String characterName = "Grom Hellscream";
         CharacterClass warrior = new WarriorClass(characterName);
         String expectedValues = "842";
@@ -27,12 +25,12 @@ class WarriorClassTest {
         actualValuesTotal += warrior.getTotalAttributes().getDexterity();
         actualValuesTotal += warrior.getTotalAttributes().getIntelligence();
 
-        assertEquals(actualValuesBase, expectedValues);
-        assertEquals(actualValuesTotal, expectedValues);
+        Assertions.assertEquals(actualValuesBase, expectedValues);
+        Assertions.assertEquals(actualValuesTotal, expectedValues);
     }
 
     @Test
-    void GetAttributes_BaseAndTotalAfterInstantiation_ExpectValues5And2And1(){
+    void TestGetAttributes_BaseAndTotalAfterInstantiation_ExpectValues5And2And1(){
         String characterName = "Grom Hellscream";
         CharacterClass warrior = new WarriorClass(characterName);
         String expectedValues = "521";
@@ -47,8 +45,8 @@ class WarriorClassTest {
         actualValuesTotal += warrior.getTotalAttributes().getDexterity();
         actualValuesTotal += warrior.getTotalAttributes().getIntelligence();
 
-        assertEquals(actualValuesBase, expectedValues);
-        assertEquals(actualValuesTotal, expectedValues);
+        Assertions.assertEquals(actualValuesBase, expectedValues);
+        Assertions.assertEquals(actualValuesTotal, expectedValues);
     }
 
 }
