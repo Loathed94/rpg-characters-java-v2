@@ -118,7 +118,7 @@ public abstract class CharacterClass {
         totalAttributes.setIntelligence(intelligence);
     }
 
-    //getter for DPS, different for each class so it is declared abstract and overwritten by subclasses.
+    //getter for DPS, different for each class so it is declared abstract and overridden by subclasses.
     public abstract double getDPS();
 
     //Getter for base attributes, however only allowed to be used within package, otherwise would allow outside modification.
