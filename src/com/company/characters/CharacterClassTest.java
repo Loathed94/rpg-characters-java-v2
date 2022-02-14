@@ -30,15 +30,26 @@ class CharacterClassTest {
     }
 
     @Test
-    void incrementLevelShouldIncreaseLevelByOneAtATime(){
-        CharacterClass warrior = new WarriorClass("Grom Hellscream");
-
-        Assertions.assertEquals(warrior.getLevel(), 1);
+    void GetLevel_LevelAfterUsingIncrementLevel_ShouldReturnTheValue2(){
+        String characterName = "Grom Hellscream";
+        int expectedLevel = 2;
+        CharacterClass warrior = new WarriorClass(characterName);
 
         warrior.incrementLevel();
-        warrior.incrementLevel();
+        int actualLevel = warrior.getLevel();
 
-        Assertions.assertEquals(warrior.getLevel(), 3);
+        Assertions.assertEquals(actualLevel, expectedLevel);
+    }
+
+    @Test
+    void GetLevel_LevelAtInstantiation_ShouldReturnTheValue1(){
+        String characterName = "Grom Hellscream";
+        int expectedLevel = 1;
+        CharacterClass warrior = new WarriorClass(characterName);
+
+        int actualLevel = warrior.getLevel();
+
+        Assertions.assertEquals(actualLevel, expectedLevel);
     }
 
     @Test
