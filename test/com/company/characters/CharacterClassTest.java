@@ -1,6 +1,5 @@
 package com.company.characters;
 
-import com.company.characters.*;
 import com.company.exceptions.InvalidArmorException;
 import com.company.exceptions.InvalidWeaponException;
 import com.company.items.*;
@@ -13,21 +12,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class CharacterClassTest {
 
     @Test
-    void namesShouldBeSetCorrectlyOnInstantiationAndBeGettable(){
+    void TestGetName_CharacterIsInstantiatedWithAName_ShouldReturnCorrectName(){
         CharacterClass mage = new MageClass("Khadgar");
-        CharacterClass warrior = new WarriorClass("Grom Hellscream");
-        CharacterClass rogue = new RogueClass("Fitting-Rogue-name");
-        CharacterClass ranger = new RangerClass("I'm-Actually-A-Hunter");
 
-        String mageName = "Khadgar";
-        String warriorName = "Grom Hellscream";
-        String rogueName = "Fitting-Rogue-name";
-        String rangerName = "I'm-Actually-A-Hunter";
+        String expectedName = "Khadgar";
+        String actualName = mage.getName();
 
-        Assertions.assertEquals(mage.getName(), mageName);
-        Assertions.assertEquals(warrior.getName(), warriorName);
-        Assertions.assertEquals(rogue.getName(), rogueName);
-        Assertions.assertEquals(ranger.getName(), rangerName);
+        Assertions.assertEquals(actualName, expectedName);
     }
 
     @Test
@@ -84,7 +75,7 @@ class CharacterClassTest {
 
         String expectedExceptionMessage = "InvalidArmorException thrown: Your level is too low for that item!";
 
-        Throwable theExceptionThrown = assertThrows(
+        Throwable theExceptionThrown = Assertions.assertThrows(
                 InvalidArmorException.class,
                 () -> {
                     warrior.equipItem(plate);
@@ -102,7 +93,7 @@ class CharacterClassTest {
 
         String expectedExceptionMessage = "InvalidWeaponException thrown: Your level is too low for that item!";
 
-        Throwable theExceptionThrown = assertThrows(
+        Throwable theExceptionThrown = Assertions.assertThrows(
                 InvalidWeaponException.class,
                 () -> {
                     warrior.equipItem(sword);
@@ -120,7 +111,7 @@ class CharacterClassTest {
 
         String expectedExceptionMessage = "InvalidWeaponException thrown: Weapon type not acceptable for your character class!";
 
-        Throwable theExceptionThrown = assertThrows(
+        Throwable theExceptionThrown = Assertions.assertThrows(
                 InvalidWeaponException.class,
                 () -> {
                     warrior.equipItem(bow);
@@ -138,7 +129,7 @@ class CharacterClassTest {
 
         String expectedExceptionMessage = "InvalidArmorException thrown: Armor type not acceptable for your character class!";
 
-        Throwable theExceptionThrown = assertThrows(
+        Throwable theExceptionThrown = Assertions.assertThrows(
                 InvalidArmorException.class,
                 () -> {
                     warrior.equipItem(hood);
