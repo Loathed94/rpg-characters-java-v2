@@ -8,10 +8,12 @@ import com.company.items.WeaponType;
 
 public class RangerClass extends CharacterClass{
 
+    //A bow wielding Hero class that extends CharacterClass.
     public RangerClass(String name){
         super(name, 1, 7, 1, new WeaponType[]{WeaponType.BOW}, new ArmorType[]{ArmorType.LEATHER, ArmorType.MAIL});
     }
 
+    //Overridden method from superclass, increases values of strength, dexterity and intelligence each time ranger levels up.
     @Override
     protected void increaseAttributesFromLevel() {
         PrimaryAttribute base = getBaseAttributes();
@@ -24,6 +26,7 @@ public class RangerClass extends CharacterClass{
         total.increaseIntelligence(1);
     }
 
+    //Overridden method from superclass, calculates DPS for Ranger using Dexterity and returns the value.
     @Override
     public double getDPS() {
         double weaponDPS;
