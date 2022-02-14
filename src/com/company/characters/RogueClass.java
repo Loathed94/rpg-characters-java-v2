@@ -8,10 +8,12 @@ import com.company.items.WeaponType;
 
 public class RogueClass extends CharacterClass{
 
+    //A blade wielding Hero class that extends CharacterClass.
     public RogueClass(String name){
         super(name, 2, 6, 1, new WeaponType[]{WeaponType.DAGGER, WeaponType.SWORD}, new ArmorType[]{ArmorType.LEATHER, ArmorType.MAIL});
     }
 
+    //Overridden method from superclass, increases values of strength, dexterity and intelligence each time rogue levels up.
     @Override
     protected void increaseAttributesFromLevel() {
         PrimaryAttribute base = getBaseAttributes();
@@ -24,6 +26,7 @@ public class RogueClass extends CharacterClass{
         total.increaseIntelligence(1);
     }
 
+    //Overridden method from superclass, calculates DPS for Rogue using Dexterity and returns the value.
     @Override
     public double getDPS() {
         double weaponDPS;
