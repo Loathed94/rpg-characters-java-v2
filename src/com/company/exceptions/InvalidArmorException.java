@@ -1,7 +1,7 @@
 package com.company.exceptions;
 
 public class InvalidArmorException extends Exception{
-    private String message;
+    private final String message;
 
     public InvalidArmorException(String message){
         this.message = message;

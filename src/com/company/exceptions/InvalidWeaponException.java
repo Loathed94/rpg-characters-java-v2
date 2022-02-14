@@ -1,7 +1,7 @@
 package com.company.exceptions;
 
 public class InvalidWeaponException extends Exception{
-    private String message;
+    private final String message;
 
     public InvalidWeaponException(String message){
         this.message = message;
