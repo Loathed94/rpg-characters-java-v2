@@ -1,16 +1,14 @@
 package com.company.characters;
 
-import com.company.characters.CharacterClass;
-import com.company.characters.MageClass;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class MageClassTest {
 
     @Test
-    void GetAttributes_BaseAndTotalAfterIncrementLevel_ExpectedValues2And2And13(){
+    void TestGetAttributes_BaseAndTotalAfterIncrementLevel_ExpectedValues2And2And13(){
         String characterName = "Khadgar";
         CharacterClass mage = new MageClass(characterName);
         String expectedValues = "2213";
@@ -32,7 +30,7 @@ class MageClassTest {
     }
 
     @Test
-    void GetAttributes_BaseAndTotalAfterInstantiation_ExpectValues1And1And8(){
+    void TestGetAttributes_BaseAndTotalAfterInstantiation_ExpectValues1And1And8(){
         String characterName = "Khadgar";
         CharacterClass mage = new MageClass(characterName);
         String expectedValues = "118";
