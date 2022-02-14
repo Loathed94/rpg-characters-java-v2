@@ -151,4 +151,14 @@ class CharacterClassTest {
 
         Assertions.assertEquals(actualExceptionMessage, expectedExceptionMessage);
     }
+
+    @Test
+    void TestGetDPS_Level1WarriorWithoutWeapon_ShouldReturnValue1Point05(){
+        CharacterClass warrior = new WarriorClass("Grom Hellscream");
+        double expectedDPS = 1.0+(5.0/100);
+
+        double actualDPS = warrior.getDPS();
+
+        Assertions.assertEquals(actualDPS, expectedDPS);
+    }
 }
