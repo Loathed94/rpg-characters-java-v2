@@ -75,29 +75,38 @@ class CharacterClassTest {
     }
 
     @Test
-    void makeSureExceptionIsThrownWhenCharacterLevelIsTooLowToEquipItem(){
+    void EquipItem_ItemLevelIsHigherThanCharacter_ShouldThrowInvalidArmorException(){
         CharacterClass warrior = new WarriorClass("Grom Hellscream");
-        Item plate = new Armor("Breastplate of utter Worthlessness", 7, EquipmentSlot.BODY, ArmorType.PLATE, 5, 2, 1);
-        Item sword = new Weapon("Blade of something", 10, WeaponType.SWORD, 50, 2);
+        Item plate = new Armor("Breastplate of Too High Level For You", 2, EquipmentSlot.BODY, ArmorType.PLATE, 23, 10, 5);
 
-        warrior.incrementLevel();
-        warrior.incrementLevel();
+        String expectedExceptionMessage = "InvalidArmorException thrown: Your level is too low for that item!";
 
-        String message = "Your level is too low for that item!";
-        Throwable expectedException = assertThrows(
-                InvalidWeaponException.class,
-                () -> {
-                    warrior.equipItem(sword);
-                }
-        );
-        assertEquals(expectedException.toString(), "InvalidWeaponException thrown: "+message);
-
-        Throwable expectedException2 = assertThrows(
+        Throwable theExceptionThrown = assertThrows(
                 InvalidArmorException.class,
                 () -> {
                     warrior.equipItem(plate);
                 }
         );
-        assertEquals(expectedException2.toString(), "InvalidArmorException thrown: "+message);
+        String actualExceptionMessage = theExceptionThrown.toString();
+
+        Assertions.assertEquals(actualExceptionMessage, expectedExceptionMessage);
+    }
+
+    @Test
+    void EquipItem_ItemLevelIsHigherThanCharacter_ShouldThrowInvalidWeaponException(){
+        CharacterClass warrior = new WarriorClass("Grom Hellscream");
+        Item sword = new Weapon("Blade You Cannot Wield", 2, WeaponType.SWORD, 50, 2);
+
+        String expectedExceptionMessage = "InvalidWeaponException thrown: Your level is too low for that item!";
+
+        Throwable theExceptionThrown = assertThrows(
+                InvalidWeaponException.class,
+                () -> {
+                    warrior.equipItem(sword);
+                }
+        );
+        String actualExceptionMessage = theExceptionThrown.toString();
+
+        Assertions.assertEquals(actualExceptionMessage, expectedExceptionMessage);
     }
 }
