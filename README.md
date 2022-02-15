@@ -19,5 +19,7 @@ Before cloning repository install:
 [Christian Neij](https://github.com/Loathed94)
 ## License
 No license.
+## Notice for Noroff Teachers
+I have created test cases that were not explicitly requested by the assignment that do not follow the recommended/requested patterns/rules. These were created before I finished reading the assignment, and I did not feel like deleting work I had done. So I hope, when grading, that you'll ignore those and instead look at the ones the assignment requested that I did implement with the requested patterns/rules.
 ## Acknowledgments
 - [readme-template](https://gist.github.com/DomPizzie/7a5ff55ffa9081f2de27c315f5018afc)
