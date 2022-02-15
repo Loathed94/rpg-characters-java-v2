@@ -6,7 +6,7 @@ import com.company.items.EquipmentSlot;
 import com.company.items.Weapon;
 import com.company.items.WeaponType;
 
-public class MageClass extends CharacterClass{
+public class MageClass extends CharacterClass implements DamageDealer{
 
     //A magic wielding Hero class that extends CharacterClass.
     public MageClass(String name){
@@ -27,7 +27,6 @@ public class MageClass extends CharacterClass{
     }
 
     //Overridden method from superclass, calculates DPS for Mage using Intelligence and returns the value.
-    @Override
     public double getDPS() {
         double weaponDPS;
         if(getEquipment(EquipmentSlot.WEAPON) != null) {

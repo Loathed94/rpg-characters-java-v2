@@ -6,7 +6,7 @@ import com.company.items.EquipmentSlot;
 import com.company.items.Weapon;
 import com.company.items.WeaponType;
 
-public class RogueClass extends CharacterClass{
+public class RogueClass extends CharacterClass implements DamageDealer{
 
     //A blade wielding Hero class that extends CharacterClass.
     public RogueClass(String name){
@@ -27,7 +27,6 @@ public class RogueClass extends CharacterClass{
     }
 
     //Overridden method from superclass, calculates DPS for Rogue using Dexterity and returns the value.
-    @Override
     public double getDPS() {
         double weaponDPS;
         if(getEquipment(EquipmentSlot.WEAPON) != null) {

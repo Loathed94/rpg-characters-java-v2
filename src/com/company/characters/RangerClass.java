@@ -6,7 +6,7 @@ import com.company.items.EquipmentSlot;
 import com.company.items.Weapon;
 import com.company.items.WeaponType;
 
-public class RangerClass extends CharacterClass{
+public class RangerClass extends CharacterClass implements DamageDealer{
 
     //A bow wielding Hero class that extends CharacterClass.
     public RangerClass(String name){
@@ -27,7 +27,6 @@ public class RangerClass extends CharacterClass{
     }
 
     //Overridden method from superclass, calculates DPS for Ranger using Dexterity and returns the value.
-    @Override
     public double getDPS() {
         double weaponDPS;
         if(getEquipment(EquipmentSlot.WEAPON) != null) {

@@ -6,7 +6,7 @@ import com.company.items.EquipmentSlot;
 import com.company.items.Weapon;
 import com.company.items.WeaponType;
 
-public class WarriorClass extends CharacterClass{
+public class WarriorClass extends CharacterClass implements DamageDealer{
 
     //A melee-weapon wielding Hero class that extends CharacterClass.
     public WarriorClass(String name){
@@ -27,7 +27,6 @@ public class WarriorClass extends CharacterClass{
     }
 
     //Overridden method from superclass, calculates DPS for Warrior using Strength and returns the value.
-    @Override
     public double getDPS() {
         double weaponDPS;
         if(getEquipment(EquipmentSlot.WEAPON) != null) {
