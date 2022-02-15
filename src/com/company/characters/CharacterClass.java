@@ -127,4 +127,20 @@ public abstract class CharacterClass {
     protected PrimaryAttribute getTotalAttributes(){
         return this.totalAttributes;
     }
+
+    @Override
+    public String toString(){
+        //Name
+        //Level
+        //Attributes
+        //DPS
+        StringBuilder outputString = new StringBuilder();
+        outputString.append("Character's name: "+this.name+"\n");
+        outputString.append("Character's level: "+this.level+"\n");
+        outputString.append("Character's strength: "+this.totalAttributes.getStrength()+"\n");
+        outputString.append("Character's dexterity: "+this.totalAttributes.getDexterity()+"\n");
+        outputString.append("Character's intelligence: "+this.totalAttributes.getIntelligence()+"\n");
+        outputString.append("Character's DPS: "+((DamageDealer) this).getDPS());
+        return outputString.toString();
+    }
 }
