@@ -16,7 +16,7 @@ Before cloning repository install:
 - Open project in IDE and run main-class.
 - Optionally compile the project without an IDE and run main-class.
 ## Author
-Christian Neij
+[Christian Neij](https://github.com/Loathed94)
 ## License
 No license.
 ## Acknowledgments
