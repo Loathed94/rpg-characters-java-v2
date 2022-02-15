@@ -128,12 +128,9 @@ public abstract class CharacterClass {
         return this.totalAttributes;
     }
 
+    //Overridden toString() from basic Object class that presents the character in String-form with its name, level, attributes and DPS.
     @Override
     public String toString(){
-        //Name
-        //Level
-        //Attributes
-        //DPS
         StringBuilder outputString = new StringBuilder();
         outputString.append("Character's name: "+this.name+"\n");
         outputString.append("Character's level: "+this.level+"\n");
