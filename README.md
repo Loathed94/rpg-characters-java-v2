@@ -2,7 +2,7 @@
 ## Description
 A collection of java classes that simulate classes that might be found in an RPG game with hero-classes and item-classes being defined and used. This is a OOP project that deals with class hierarchy and JUnit testing among other things.
 ### Dependencies
-- Java JDK 17
+- Java JDK or JRE. 
 - JUnit 5
 ### Installing
 The project:
