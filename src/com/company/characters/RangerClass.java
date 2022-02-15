@@ -26,7 +26,8 @@ public class RangerClass extends CharacterClass implements DamageDealer{
         total.increaseIntelligence(1);
     }
 
-    //Overridden method from superclass, calculates DPS for Ranger using Dexterity and returns the value.
+    //Method implemented from interface intended to give the RangerClass damage-dealing feature. Will return the damage per second the ranger will do to enemies.
+    @Override
     public double getDPS() {
         double weaponDPS;
         if(getEquipment(EquipmentSlot.WEAPON) != null) {

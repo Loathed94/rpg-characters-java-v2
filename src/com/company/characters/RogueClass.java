@@ -26,7 +26,8 @@ public class RogueClass extends CharacterClass implements DamageDealer{
         total.increaseIntelligence(1);
     }
 
-    //Overridden method from superclass, calculates DPS for Rogue using Dexterity and returns the value.
+    //Method implemented from interface intended to give the RogueClass damage-dealing feature. Will return the damage per second the rogue will do to enemies.
+    @Override
     public double getDPS() {
         double weaponDPS;
         if(getEquipment(EquipmentSlot.WEAPON) != null) {

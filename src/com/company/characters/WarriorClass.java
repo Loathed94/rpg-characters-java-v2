@@ -26,7 +26,8 @@ public class WarriorClass extends CharacterClass implements DamageDealer{
         total.increaseIntelligence(1);
     }
 
-    //Overridden method from superclass, calculates DPS for Warrior using Strength and returns the value.
+    //Method implemented from interface intended to give the WarriorClass damage-dealing feature. Will return the damage per second the warrior will do to enemies.
+    @Override
     public double getDPS() {
         double weaponDPS;
         if(getEquipment(EquipmentSlot.WEAPON) != null) {
