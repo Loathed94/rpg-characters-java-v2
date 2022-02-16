@@ -1,7 +1,6 @@
 package com.company.characters;
 
-import com.company.characters.CharacterClass;
-import com.company.characters.RangerClass;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
