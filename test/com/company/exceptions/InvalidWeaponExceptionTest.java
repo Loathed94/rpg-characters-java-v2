@@ -18,6 +18,6 @@ class InvalidWeaponExceptionTest {
         String expectedExceptionMessage = "InvalidWeaponException thrown: "+message;
         String actualExceptionMessage = expectedException.toString();
 
-        Assertions.assertEquals(actualExceptionMessage, expectedExceptionMessage);
+        Assertions.assertEquals(expectedExceptionMessage, actualExceptionMessage);
     }
 }

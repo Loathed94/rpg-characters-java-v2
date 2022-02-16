@@ -17,6 +17,6 @@ class InvalidArmorExceptionTest {
         );
         String expectedExceptionMessage = "InvalidArmorException thrown: "+message;
         String actualExceptionMessage = expectedException.toString();
-        Assertions.assertEquals(actualExceptionMessage, expectedExceptionMessage);
+        Assertions.assertEquals(expectedExceptionMessage, actualExceptionMessage);
     }
 }
