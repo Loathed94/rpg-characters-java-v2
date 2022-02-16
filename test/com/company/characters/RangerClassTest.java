@@ -25,8 +25,8 @@ class RangerClassTest {
         actualValuesTotal += ranger.getTotalAttributes().getDexterity();
         actualValuesTotal += ranger.getTotalAttributes().getIntelligence();
 
-        Assertions.assertEquals(actualValuesBase, expectedValues);
-        Assertions.assertEquals(actualValuesTotal, expectedValues);
+        Assertions.assertEquals(expectedValues, actualValuesBase);
+        Assertions.assertEquals(expectedValues, actualValuesTotal);
     }
 
     @Test
@@ -45,7 +45,7 @@ class RangerClassTest {
         actualValuesTotal += ranger.getTotalAttributes().getDexterity();
         actualValuesTotal += ranger.getTotalAttributes().getIntelligence();
 
-        Assertions.assertEquals(actualValuesBase, expectedValues);
-        Assertions.assertEquals(actualValuesTotal, expectedValues);
+        Assertions.assertEquals(expectedValues, actualValuesBase);
+        Assertions.assertEquals(expectedValues, actualValuesTotal);
     }
 }
