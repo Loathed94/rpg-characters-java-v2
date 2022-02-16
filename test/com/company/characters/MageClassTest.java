@@ -25,8 +25,8 @@ class MageClassTest {
         actualValuesTotal += mage.getTotalAttributes().getDexterity();
         actualValuesTotal += mage.getTotalAttributes().getIntelligence();
 
-        Assertions.assertEquals(actualValuesBase, expectedValues);
-        Assertions.assertEquals(actualValuesTotal, expectedValues);
+        Assertions.assertEquals(expectedValues, actualValuesBase);
+        Assertions.assertEquals(expectedValues, actualValuesTotal);
     }
 
     @Test
@@ -45,8 +45,8 @@ class MageClassTest {
         actualValuesTotal += mage.getTotalAttributes().getDexterity();
         actualValuesTotal += mage.getTotalAttributes().getIntelligence();
 
-        Assertions.assertEquals(actualValuesBase, expectedValues);
-        Assertions.assertEquals(actualValuesTotal, expectedValues);
+        Assertions.assertEquals(expectedValues, actualValuesBase);
+        Assertions.assertEquals(expectedValues, actualValuesTotal);
     }
 
 }
