@@ -13,12 +13,12 @@ class CharacterClassTest {
 
     @Test
     void TestGetName_CharacterIsInstantiatedWithAName_ShouldReturnCorrectName(){
-        CharacterClass mage = new MageClass("Khadgar");
-
         String expectedName = "Khadgar";
+        CharacterClass mage = new MageClass(expectedName);
+
         String actualName = mage.getName();
 
-        Assertions.assertEquals(actualName, expectedName);
+        Assertions.assertEquals(expectedName, actualName);
     }
 
     @Test
@@ -30,7 +30,7 @@ class CharacterClassTest {
         warrior.incrementLevel();
         int actualLevel = warrior.getLevel();
 
-        Assertions.assertEquals(actualLevel, expectedLevel);
+        Assertions.assertEquals(expectedLevel, actualLevel);
     }
 
     @Test
@@ -41,7 +41,7 @@ class CharacterClassTest {
 
         int actualLevel = warrior.getLevel();
 
-        Assertions.assertEquals(actualLevel, expectedLevel);
+        Assertions.assertEquals(expectedLevel, actualLevel);
     }
 
     @Test
@@ -83,7 +83,7 @@ class CharacterClassTest {
         );
         String actualExceptionMessage = theExceptionThrown.toString();
 
-        Assertions.assertEquals(actualExceptionMessage, expectedExceptionMessage);
+        Assertions.assertEquals(expectedExceptionMessage, actualExceptionMessage);
     }
 
     @Test
@@ -101,7 +101,7 @@ class CharacterClassTest {
         );
         String actualExceptionMessage = theExceptionThrown.toString();
 
-        Assertions.assertEquals(actualExceptionMessage, expectedExceptionMessage);
+        Assertions.assertEquals(expectedExceptionMessage, actualExceptionMessage);
     }
 
     @Test
@@ -119,7 +119,7 @@ class CharacterClassTest {
         );
         String actualExceptionMessage = theExceptionThrown.toString();
 
-        Assertions.assertEquals(actualExceptionMessage, expectedExceptionMessage);
+        Assertions.assertEquals(expectedExceptionMessage, actualExceptionMessage);
     }
 
     @Test
@@ -137,7 +137,7 @@ class CharacterClassTest {
         );
         String actualExceptionMessage = theExceptionThrown.toString();
 
-        Assertions.assertEquals(actualExceptionMessage, expectedExceptionMessage);
+        Assertions.assertEquals(expectedExceptionMessage, actualExceptionMessage);
     }
 
     @Test
@@ -147,7 +147,7 @@ class CharacterClassTest {
 
         double actualDPS = ((DamageDealer) warrior).getDPS();
 
-        Assertions.assertEquals(actualDPS, expectedDPS);
+        Assertions.assertEquals(expectedDPS, actualDPS);
     }
 
     @Test
@@ -159,7 +159,7 @@ class CharacterClassTest {
         warrior.equipItem(hammer);
         double actualDPS = ((DamageDealer) warrior).getDPS();
 
-        Assertions.assertEquals(actualDPS, expectedDPS);
+        Assertions.assertEquals(expectedDPS, actualDPS);
     }
 
     @Test
@@ -174,6 +174,6 @@ class CharacterClassTest {
         warrior.equipItem(plate);
         double actualDPS = ((DamageDealer) warrior).getDPS();
 
-        Assertions.assertEquals(actualDPS, expectedDPS);
+        Assertions.assertEquals(expectedDPS, actualDPS);
     }
 }
