@@ -9,28 +9,28 @@ class ArmorTest {
 
     @Test
     void TestGetAttributes_AttributesOfArmorAtInstantiation_ShouldReturnCorrectValues(){
-        Armor armor = new Armor("BlaBla", 4, EquipmentSlot.HEAD, ArmorType.LEATHER, 6, 9, 3);
+        int expectedStrength = 6;
+        int expectedDexterity = 9;
+        int expectedIntelligence = 3;
+        Armor armor = new Armor("BlaBla", 4, EquipmentSlot.HEAD, ArmorType.LEATHER, expectedStrength, expectedDexterity, expectedIntelligence);
 
         int actualStrength = armor.getAttributes()[0];
-        int expectedStrength = 6;
         int actualDexterity = armor.getAttributes()[1];
-        int expectedDexterity = 9;
         int actualIntelligence = armor.getAttributes()[2];
-        int expectedIntelligence = 3;
 
-        Assertions.assertEquals(actualStrength, expectedStrength);
-        Assertions.assertEquals(actualDexterity, expectedDexterity);
-        Assertions.assertEquals(actualIntelligence, expectedIntelligence);
+        Assertions.assertEquals(expectedStrength, actualStrength);
+        Assertions.assertEquals(expectedDexterity, actualDexterity);
+        Assertions.assertEquals(expectedIntelligence, actualIntelligence);
     }
 
     @Test
     void TestGetArmorType_InstantiateArmorObjectWithArmorType_ShouldReturnCorrectArmorType(){
-        Armor leather = new Armor("BlaBla", 4, EquipmentSlot.HEAD, ArmorType.LEATHER, 6, 9, 3);
+        ArmorType expectedType = ArmorType.LEATHER;
+        Armor leather = new Armor("BlaBla", 4, EquipmentSlot.HEAD, expectedType, 6, 9, 3);
 
         ArmorType actualType = leather.getArmorType();
-        ArmorType expectedType = ArmorType.LEATHER;
 
-        Assertions.assertEquals(actualType, expectedType);
+        Assertions.assertEquals(expectedType, actualType);
     }
 
     @Test
@@ -45,6 +45,6 @@ class ArmorTest {
         );
         String actualExceptionMessage = expectedException.getMessage();
 
-        Assertions.assertEquals(actualExceptionMessage, expectedExceptionMessage);
+        Assertions.assertEquals(expectedExceptionMessage, actualExceptionMessage);
     }
 }
