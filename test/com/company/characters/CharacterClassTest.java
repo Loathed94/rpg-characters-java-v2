@@ -145,7 +145,7 @@ class CharacterClassTest {
         CharacterClass warrior = new WarriorClass("Grom Hellscream");
         double expectedDPS = 1.0+(5.0/100);
 
-        double actualDPS = ((WarriorClass) warrior).getDPS();
+        double actualDPS = ((DamageDealer) warrior).getDPS();
 
         Assertions.assertEquals(actualDPS, expectedDPS);
     }
@@ -157,7 +157,7 @@ class CharacterClassTest {
         double expectedDPS = (14*0.9)*(1.0+(5.0/100));
 
         warrior.equipItem(hammer);
-        double actualDPS = ((WarriorClass) warrior).getDPS();
+        double actualDPS = ((DamageDealer) warrior).getDPS();
 
         Assertions.assertEquals(actualDPS, expectedDPS);
     }
@@ -172,7 +172,7 @@ class CharacterClassTest {
 
         warrior.equipItem(hammer);
         warrior.equipItem(plate);
-        double actualDPS = ((WarriorClass) warrior).getDPS();
+        double actualDPS = ((DamageDealer) warrior).getDPS();
 
         Assertions.assertEquals(actualDPS, expectedDPS);
     }
