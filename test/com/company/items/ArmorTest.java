@@ -40,7 +40,7 @@ class ArmorTest {
         Throwable expectedException = Assertions.assertThrows(
                 IllegalArgumentException.class,
                 () -> {
-                    Item armor = new Armor("A fitting name", 8, EquipmentSlot.WEAPON, ArmorType.MAIL, 6, 8, 1);
+                    new Armor("A fitting name", 8, EquipmentSlot.WEAPON, ArmorType.MAIL, 6, 8, 1);
                 }
         );
         String actualExceptionMessage = expectedException.getMessage();
