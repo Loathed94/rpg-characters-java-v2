@@ -25,8 +25,8 @@ class RogueClassTest {
         actualValuesTotal += rogue.getTotalAttributes().getDexterity();
         actualValuesTotal += rogue.getTotalAttributes().getIntelligence();
 
-        Assertions.assertEquals(actualValuesBase, expectedValues);
-        Assertions.assertEquals(actualValuesTotal, expectedValues);
+        Assertions.assertEquals(expectedValues, actualValuesBase);
+        Assertions.assertEquals(expectedValues, actualValuesTotal);
     }
 
     @Test
@@ -45,7 +45,7 @@ class RogueClassTest {
         actualValuesTotal += rogue.getTotalAttributes().getDexterity();
         actualValuesTotal += rogue.getTotalAttributes().getIntelligence();
 
-        Assertions.assertEquals(actualValuesBase, expectedValues);
-        Assertions.assertEquals(actualValuesTotal, expectedValues);
+        Assertions.assertEquals(expectedValues, actualValuesBase);
+        Assertions.assertEquals(expectedValues, actualValuesTotal);
     }
 }
